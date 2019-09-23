@@ -1,2 +1,2 @@
-# collor-palette
-A app to create collor palettes
+# color-palette
+A app to create color palettes
