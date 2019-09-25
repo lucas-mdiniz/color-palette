@@ -1,10 +1,14 @@
 import React from 'react';
-import './App.css';
+import MiniPalette from './MiniPalette';
+import Grid from '@material-ui/core/Grid';
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <Grid container>
+      <Grid item xs={12} sm={4}>
+          <MiniPalette/>
+      </Grid>
+    </Grid>
   );
 }
 
