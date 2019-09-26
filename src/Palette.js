@@ -6,7 +6,7 @@ class Palette extends Component{
     render(){
         return(
             
-            <Grid container spacing={3}>
+            <Grid container>
                 <Grid item xs={12} sm={4} md={3}>
                     <ColorBox color={'red'}/>
                 </Grid>

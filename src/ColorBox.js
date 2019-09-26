@@ -49,9 +49,8 @@ const StyledLink = styled(Link)`
 class ColorBox extends Component{
     
     render(){
-        console.log(this.props);
         return(
-            <Box>
+            <Box color={this.props.color}>
                 <ColorTitle>color name</ColorTitle>
                 <StyledLink to='/path'>More</StyledLink>
                 <CopyButton>copy</CopyButton>
