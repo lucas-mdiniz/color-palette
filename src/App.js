@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
-import MiniPalette from './MiniPalette';
-import Grid from '@material-ui/core/Grid';
+import './App.css';
+import {Switch, Route} from 'react-router-dom';
+import Home from './Home';
+import Palette from './Palette';
 
 class App extends Component {
   constructor(props){
@@ -8,29 +10,32 @@ class App extends Component {
 
     this.state = {
       palettes: [{
-        colors: ['#2548fe', '#e8d6e5', '#9C27B0', '#673AB7', '#FFC107', '#795548', '#8BC34A', '#3F51B5','#2548fe', '#e8d6e5', '#9C27B0', '#673AB7', '#FFC107', '#795548', '#8BC34A', '#3F51B5'],
+        colors: ['red', '#e8d6e5', '#9C27B0', '#673AB7', '#FFC107', '#795548', '#8BC34A', '#3F51B5','#2548fe', '#e8d6e5', '#9C27B0', '#673AB7', '#FFC107', '#795548', '#8BC34A', '#3F51B5', '#2548fe', '#e8d6e5', '#9C27B0', '#673AB7'],
         name: 'crazy frog',
-        icon: ''
+        icon: 'x',
+        id: 'asd'
       },
       {
-        colors: ['#2548fe', '#e8d6e5', '#9C27B0', '#673AB7', '#FFC107', '#795548', '#8BC34A', '#3F51B5','#2548fe', '#e8d6e5', '#9C27B0', '#673AB7', '#FFC107', '#795548', '#8BC34A', '#3F51B5'],
+        colors: ['#2548fe', '#e8d6e5', '#9C27B0', '#673AB7', '#FFC107', '#795548', '#8BC34A', '#3F51B5','#2548fe', '#e8d6e5', '#9C27B0', '#673AB7', '#FFC107', '#795548', '#8BC34A', '#3F51B5', '#2548fe', '#e8d6e5', '#9C27B0', '#673AB7'],
         name: 'crazy wolf',
-        icon: ''
+        icon: 'x',
+        id: 'asdasd'
       },
       {
-        colors: ['#2548fe', '#e8d6e5', '#9C27B0', '#673AB7', '#FFC107', '#795548', '#8BC34A', '#3F51B5','#2548fe', '#e8d6e5', '#9C27B0', '#673AB7', '#FFC107', '#795548', '#8BC34A', '#3F51B5'],
+        colors: ['green', '#e8d6e5', '#9C27B0', '#673AB7', '#FFC107', '#795548', '#8BC34A', '#3F51B5','#2548fe', '#e8d6e5', '#9C27B0', '#673AB7', '#FFC107', '#795548', '#8BC34A', '#3F51B5', '#2548fe', '#e8d6e5', '#9C27B0', '#673AB7'],
         name: 'crazy dog',
-        icon: ''
+        icon: 'x',
+        id: 'ccdsd'
       }]
     };
   }
+
   render(){
     return (
-      <div>
-        <Grid container spacing={7}>
-          {this.state.palettes.map((palette) => <Grid item sm={4} xs={12}><MiniPalette colors={palette.colors} name={palette.name} icon={palette.icon}/></Grid>)}
-        </Grid>
-      </div>
+      <Switch>
+        <Route exact path='/' render={() => <Home palettes={this.state.palettes}/>}/>
+        <Route exact path='/palette/:id' render={(urlParams) => <Palette palettes={this.state.palettes} urlParams={urlParams}/>}/> 
+      </Switch>
     );
   }
 }

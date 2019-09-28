@@ -11,7 +11,6 @@ const MiniPaletteWrapper =  styled.div`
 `;
 
 const StyledMiniPalette = styled.div`
-    width: 100%;
     background: #cdcdcd;
     padding: 10px;
 `;
@@ -31,6 +30,12 @@ const PaletteName = styled.span`
     margin-top: 10px;
 `;
 
+const PaletteDescription = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+`;
 class MiniPalette extends Component{
     render(){
         return(
@@ -40,8 +45,10 @@ class MiniPalette extends Component{
                         {this.props.colors.map(color =>  <Grid item xs={3}><MiniColorBox color={color}/></Grid>)}
                     </Grid>
                 </MiniPaletteWrapper> 
-                <PaletteName>{this.props.name}</PaletteName>
-                <PaletteIcon>{this.props.icon}</PaletteIcon>               
+                <PaletteDescription>
+                    <PaletteName>{this.props.name}</PaletteName>
+                    <PaletteIcon>{this.props.icon}</PaletteIcon>   
+                </PaletteDescription>
             </StyledMiniPalette>
 
         )

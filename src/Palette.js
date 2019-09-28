@@ -4,23 +4,13 @@ import Grid from '@material-ui/core/Grid';
 
 class Palette extends Component{
     render(){
-        return(
-            
-            <Grid container>
-                <Grid item xs={12} sm={4} md={3}>
-                    <ColorBox color={'red'}/>
-                </Grid>
-                <Grid item xs={12} sm={4} md={3}>
-                    <ColorBox color={'blue'}/>
-                </Grid>
-                <Grid item xs={12} sm={4} md={3}>
-                    <ColorBox color={'red'}/>
-                </Grid>
-                <Grid item xs={12} sm={4} md={3}>
-                    <ColorBox color={'blue'}/>
-                </Grid>
-            </Grid>
+        const paletteRender = this.props.palettes.filter(palette => palette.id === this.props.urlParams.match.params.id)[0]
+            .colors.map(color => <Grid item xs={12} sm={4} md={3}><ColorBox color={color}/></Grid>);
 
+        return(
+            <Grid container>
+                {paletteRender}
+            </Grid>
         )
     }
 }
