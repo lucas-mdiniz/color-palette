@@ -1,16 +1,18 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+import color from "chroma-js";
 
- 
-
-const CopyButton = styled.span`
+const CopyButton = styled.button`
     color: #fff;
     background: rgba(255,255,255,.3);
     opacity: 0;
     text-transform: uppercase; 
     padding: 7px 20px;
     transition: 300ms;
+    cursor: pointer;
+    border: none;
 `;
 
 const Box = styled.div`
@@ -21,7 +23,6 @@ const Box = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
         
     &:hover ${CopyButton}{
         opacity: 1;
@@ -47,13 +48,33 @@ const StyledLink = styled(Link)`
 `;
 
 class ColorBox extends Component{
-    
+    constructor(){
+        super()
+        this.state = {
+            colorText: ''
+        }
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick(e){
+        if(this.props.colorFormat === 'hex'){
+            this.setState({colorText: color(this.props.color).hex()});
+        } else if(this.props.colorFormat === 'rgb'){
+            this.setState({colorText: color(this.props.color).rgb()});
+        } else {
+            this.setState({colorText: color(this.props.color).rgba()});
+        }
+    }
+
     render(){
         return(
             <Box color={this.props.color}>
                 <ColorTitle>color name</ColorTitle>
                 <StyledLink to='/path'>More</StyledLink>
-                <CopyButton>copy</CopyButton>
+
+                <CopyToClipboard text={this.props.color}>
+                    <CopyButton onClick={this.handleClick}>copy</CopyButton>
+                </CopyToClipboard>
             </Box>
         )
     }
