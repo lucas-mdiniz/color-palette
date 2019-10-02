@@ -11,7 +11,6 @@ const CopyButton = styled.button`
     text-transform: uppercase; 
     padding: 7px 20px;
     transition: 300ms;
-    cursor: pointer;
     border: none;
 `;
 
@@ -23,6 +22,7 @@ const Box = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
         
     &:hover ${CopyButton}{
         opacity: 1;
@@ -47,35 +47,52 @@ const StyledLink = styled(Link)`
     color: #fff;
 `;
 
+const BoxOverlay = styled.div`
+    background: ${props => props.colorOverlay};
+    width: 100%;
+    height: 100%;
+    transition: all 500ms;
+    position: absolute;
+    opacity: 1;
+    transform:  ${props => (props.colorCopied ? 'scale(50)' : 'scale(1)')};
+    z-index: ${props => (props.colorCopied ? '10' : '-1')};
+
+`;
+
 class ColorBox extends Component{
     constructor(){
-        super()
+        super();
+
         this.state = {
-            colorText: ''
+            copied: false
         }
-        this.handleClick = this.handleClick.bind(this);
+
+        this.copyColor = this.copyColor.bind(this);
+    }
+    colorFormated(){
+        if(this.props.colorFormat === 'hex'){
+            return(color(this.props.color).hex());
+        } else if(this.props.colorFormat === 'rgb'){
+            return(`rgb(${color(this.props.color).rgb().map(color => color)})`);
+        } else {
+            return(`rgba(${color(this.props.color).rgba().map(color => color)})`);
+        }
     }
 
-    handleClick(e){
-        if(this.props.colorFormat === 'hex'){
-            this.setState({colorText: color(this.props.color).hex()});
-        } else if(this.props.colorFormat === 'rgb'){
-            this.setState({colorText: color(this.props.color).rgb()});
-        } else {
-            this.setState({colorText: color(this.props.color).rgba()});
-        }
+    copyColor(){
+        this.setState({copied: true}, () => {setTimeout(() =>{ this.setState({copied: false})}, 1500)});
     }
 
     render(){
         return(
-            <Box color={this.props.color}>
-                <ColorTitle>color name</ColorTitle>
-                <StyledLink to='/path'>More</StyledLink>
-
-                <CopyToClipboard text={this.props.color}>
+            <CopyToClipboard text={this.colorFormated()} onCopy={this.copyColor}>
+                <Box color={this.props.color}>
+                    <BoxOverlay colorOverlay={this.props.color} colorCopied={this.state.copied}/>
+                    <ColorTitle>color name</ColorTitle>
+                    <StyledLink to='/path'>More</StyledLink>
                     <CopyButton onClick={this.handleClick}>copy</CopyButton>
-                </CopyToClipboard>
-            </Box>
+                </Box>
+            </CopyToClipboard>
         )
     }
 }
