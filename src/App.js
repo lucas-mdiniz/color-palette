@@ -3,37 +3,31 @@ import './App.css';
 import {Switch, Route} from 'react-router-dom';
 import Home from './Home';
 import Palette from './Palette';
+import axios from 'axios'
+
+const API = 'http://localhost:3000/'
+const DEFAULT_QUERY = 'palettes'
 
 class App extends Component {
-  constructor(props){
-    super(props);
+  constructor(){
+    super();
 
     this.state = {
-      palettes: [{
-        colors: ['red', '#e8d6e5', '#9C27B0', '#673AB7', '#FFC107', '#795548', '#8BC34A', '#3F51B5','#2548fe', '#e8d6e5', '#9C27B0', '#673AB7', '#FFC107', '#795548', '#8BC34A', '#3F51B5', '#2548fe', '#e8d6e5', '#9C27B0', '#673AB7'],
-        name: 'crazy frog',
-        icon: 'x',
-        colorFormat: 'hex',
-        id: 'asd'
-      },
-      {
-        colors: ['#2548fe', '#e8d6e5', '#9C27B0', '#673AB7', '#FFC107', '#795548', '#8BC34A', '#3F51B5','#2548fe', '#e8d6e5', '#9C27B0', '#673AB7', '#FFC107', '#795548', '#8BC34A', '#3F51B5', '#2548fe', '#e8d6e5', '#9C27B0', '#673AB7'],
-        name: 'crazy wolf',
-        icon: 'x',
-        colorFormat: 'hex',
-        id: 'asdasd'
-      },
-      {
-        colors: ['green', '#e8d6e5', '#9C27B0', '#673AB7', '#FFC107', '#795548', '#8BC34A', '#3F51B5','#2548fe', '#e8d6e5', '#9C27B0', '#673AB7', '#FFC107', '#795548', '#8BC34A', '#3F51B5', '#2548fe', '#e8d6e5', '#9C27B0', '#673AB7'],
-        name: 'crazy dog',
-        icon: 'x',
-        colorFormat: 'hex',
-        id: 'ccdsd'
-      }]
-    };
+      palettes: [],
+      isLoading: false
+    }
   }
 
-  
+  async componentDidMount(){
+    this.setState({ isLoading: true });
+
+    const response = await axios.get(API + DEFAULT_QUERY);  
+
+    this.setState({
+      palettes: [...response.data],
+      isLoading:false
+    });
+  }
 
   render(){
     return (

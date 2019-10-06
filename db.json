@@ -1,0 +1,87 @@
+{
+  "palettes": [
+      {
+          "colors": {
+              "red" :"red", 
+              "color1": "#e8d6e5", 
+              "color2": "#9C27B0", 
+              "color3": "#673AB7", 
+              "color4": "#FFC107", 
+              "color5": "#795548", 
+              "color6": "#8BC34A", 
+              "color7": "#3F51B5",
+              "color8": "#2548fe", 
+              "color9": "#e8d6e5", 
+              "color10": "#9C27B0", 
+              "color11": "#673AB7", 
+              "color12": "#FFC107", 
+              "color13": "#795548", 
+              "color14": "#8BC34A", 
+              "color15": "#3F51B5", 
+              "color16": "#2548fe", 
+              "color17": "#e8d6e5", 
+              "color18": "#9C27B0", 
+              "color19": "#673AB7"
+          },
+          "name": "crazy frog",
+          "icon": "x",
+          "colorFormat": "hex",
+          "id": "asd"
+      },
+      {
+          "colors": {
+              "red" :"red", 
+              "color1": "#e8d6e5", 
+              "color2": "#9C27B0", 
+              "color3": "#673AB7", 
+              "color4": "#FFC107", 
+              "color5": "#795548", 
+              "color6": "#8BC34A", 
+              "color7": "#3F51B5",
+              "color8": "#2548fe", 
+              "color9": "#e8d6e5", 
+              "color10": "#9C27B0", 
+              "color11": "#673AB7", 
+              "color12": "#FFC107", 
+              "color13": "#795548", 
+              "color14": "#8BC34A", 
+              "color15": "#3F51B5", 
+              "color16": "#2548fe", 
+              "color17": "#e8d6e5", 
+              "color18": "#9C27B0", 
+              "color19": "#673AB7"
+          },
+          "name": "crazy frog",
+          "icon": "x",
+          "colorFormat": "hex",
+          "id": "asd"
+      },
+      {
+          "colors": {
+              "red" :"red", 
+              "color1": "#e8d6e5", 
+              "color2": "#9C27B0", 
+              "color3": "#673AB7", 
+              "color4": "#FFC107", 
+              "color5": "#795548", 
+              "color6": "#8BC34A", 
+              "color7": "#3F51B5",
+              "color8": "#2548fe", 
+              "color9": "#e8d6e5", 
+              "color10": "#9C27B0", 
+              "color11": "#673AB7", 
+              "color12": "#FFC107", 
+              "color13": "#795548", 
+              "color14": "#8BC34A", 
+              "color15": "#3F51B5", 
+              "color16": "#2548fe", 
+              "color17": "#e8d6e5", 
+              "color18": "#9C27B0", 
+              "color19": "#673AB7"
+          },
+          "name": "crazy frog",
+          "icon": "x",
+          "colorFormat": "hex",
+          "id": "asd"
+      }
+]}

@@ -12,7 +12,9 @@ const StyledApp = styled.div`
 `;
 
 class Home extends Component {
+
   render(){
+
     return (
       <StyledApp>
         <Grid container spacing={10}>

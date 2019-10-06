@@ -42,7 +42,7 @@ class MiniPalette extends Component{
             <StyledMiniPalette>
                 <MiniPaletteWrapper>
                     <Grid container>
-                        {this.props.colors.map(color =>  <Grid item xs={3}><MiniColorBox color={color}/></Grid>)}
+                        {Object.values(this.props.colors).map(color =>  <Grid item xs={3}><MiniColorBox color={color}/></Grid>)}
                     </Grid>
                 </MiniPaletteWrapper> 
                 <PaletteDescription>
