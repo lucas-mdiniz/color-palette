@@ -30,10 +30,11 @@ class App extends Component {
   }
 
   render(){
+
     return (
       <Switch>
         <Route exact path='/' render={() => <Home palettes={this.state.palettes}/>}/>
-        <Route exact path='/palette/:id' render={(urlParams) => <Palette palettes={this.state.palettes} urlParams={urlParams}/>}/> 
+        <Route exact path='/palette/:id' render={(urlParams) => <Palette palettes={this.state.palettes} loading={this.state.isLoading} urlParams={urlParams}/>}/> 
       </Switch>
     );
   }
