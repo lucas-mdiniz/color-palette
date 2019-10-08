@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import styled from 'styled-components';
 import './App.css';
 import {Link} from 'react-router-dom';
+import ColorShades from './ColorShades';
 
 const StyledApp = styled.div`
   max-width: 1170px;

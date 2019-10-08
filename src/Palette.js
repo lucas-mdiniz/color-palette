@@ -22,8 +22,8 @@ class Palette extends Component{
         let paletteRender;
 
         if(this.props.palettes.length !== 0){
-            paletteRender = Object.values(this.props.palettes.filter(palette => palette.id === this.props.urlParams.match.params.id)[0]
-            .colors).map(color => <Grid item xs={12} sm={4} md={3}><ColorBox color={color} colorFormat={this.state.colorFormat}/></Grid>);  
+            paletteRender = Object.entries(this.props.palettes.filter(palette => palette.id === this.props.urlParams.match.params.id)[0]
+            .colors).map(color => <Grid item xs={12} sm={4} md={3}><ColorBox color={color[1]} colorFormat={this.state.colorFormat} name={color[0]}/></Grid>);  
         } else {
             paletteRender = <p>loading</p>
         }

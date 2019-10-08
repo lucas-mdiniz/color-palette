@@ -3,6 +3,7 @@ import './App.css';
 import {Switch, Route} from 'react-router-dom';
 import Home from './Home';
 import Palette from './Palette';
+import ColorShades from './ColorShades';
 import axios from 'axios'
 
 const API = 'http://localhost:3000/'
@@ -34,7 +35,8 @@ class App extends Component {
     return (
       <Switch>
         <Route exact path='/' render={() => <Home palettes={this.state.palettes}/>}/>
-        <Route exact path='/palette/:id' render={(urlParams) => <Palette palettes={this.state.palettes} loading={this.state.isLoading} urlParams={urlParams}/>}/> 
+        <Route exact path='/palette/:id' render={(urlParams) => <Palette palettes={this.state.palettes} loading={this.state.isLoading} urlParams={urlParams}/>}/>
+        <Route exact path='/shades/:color' render={() => <ColorShades/>}/>
       </Switch>
     );
   }

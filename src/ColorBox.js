@@ -69,6 +69,7 @@ class ColorBox extends Component{
 
         this.copyColor = this.copyColor.bind(this);
     }
+    
     colorFormated(){
         if(this.props.colorFormat === 'hex'){
             return(color(this.props.color).hex());
@@ -89,7 +90,7 @@ class ColorBox extends Component{
                 <Box color={this.props.color}>
                     <BoxOverlay colorOverlay={this.props.color} colorCopied={this.state.copied}/>
                     <ColorTitle>color name</ColorTitle>
-                    <StyledLink to='/path'>More</StyledLink>
+                    <StyledLink to={`/shades/${this.props.name}&${this.props.color}`}>More</StyledLink>
                     <CopyButton onClick={this.handleClick}>copy</CopyButton>
                 </Box>
             </CopyToClipboard>

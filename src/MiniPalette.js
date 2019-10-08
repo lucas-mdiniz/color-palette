@@ -50,7 +50,6 @@ class MiniPalette extends Component{
                     <PaletteIcon>{this.props.icon}</PaletteIcon>   
                 </PaletteDescription>
             </StyledMiniPalette>
-
         )
     }
 }
