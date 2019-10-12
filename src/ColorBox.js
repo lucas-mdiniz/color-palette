@@ -90,7 +90,12 @@ class ColorBox extends Component{
                 <Box color={this.props.color}>
                     <BoxOverlay colorOverlay={this.props.color} colorCopied={this.state.copied}/>
                     <ColorTitle>color name</ColorTitle>
-                    <StyledLink to={`/shades/${this.props.name}&${this.props.color}`}>More</StyledLink>
+                    <StyledLink to={{
+                            pathname: `/shades/${this.props.name}`,
+                            state: {
+                                color: this.props.color 
+                            }
+                    }}>More</StyledLink>
                     <CopyButton onClick={this.handleClick}>copy</CopyButton>
                 </Box>
             </CopyToClipboard>
