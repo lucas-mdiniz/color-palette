@@ -8,7 +8,6 @@ import Select from '@material-ui/core/Select';
 const StyledPaletteHeader = styled.div`
     background: #fff;
     padding: 10px;
-    width: 100%;
 `;
 
 const StyledSelect = styled(Select)`
