@@ -59,12 +59,12 @@ const BoxOverlay = styled.div`
     top: 0;
     left: 0;
     z-index: ${props => (props.colorCopied ? '10' : '-1')};
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
 `;
 
 const CopiedSign = styled.p`
-    top: 50%;
-    transform: translateY(-50%);
-    position: relative;
     font-weight: bold;
     font-size: 3rem;
     color: #fff;
