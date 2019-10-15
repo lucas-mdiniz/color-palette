@@ -73,27 +73,27 @@ class PaletteHeader extends Component{
     handleSlider(e, value){
         this.setState({
             luminanceSlider: value
-        });
+        }, () => this.props.luminanceSlider(this.state.luminanceSlider));
     }
     
     render(){
-
         return(
             <StyledPaletteHeader>
-                <SliderWrapper>
-                    <StyledTypography gutterBottom>Level: [{this.state.luminanceSlider}]</StyledTypography>
-                    <StyledSlider
-                        aria-labelledby="discrete-slider"
-                        valueLabelDisplay="auto"
-                        step={100}
-                        min={50}
-                        max={800}
-                        value={this.state.luminanceSlider}
-                        onChange={this.handleSlider}
-                        name='luminanceSlider'
-                    />
-                </SliderWrapper>
-
+                { this.props.luminanceOn &&
+                    <SliderWrapper>
+                        <StyledTypography gutterBottom>Level: [{this.state.luminanceSlider}]</StyledTypography>
+                        <StyledSlider
+                            aria-labelledby="discrete-slider"
+                            valueLabelDisplay="auto"
+                            step={100}
+                            min={50}
+                            max={700}
+                            value={this.state.luminanceSlider}
+                            onChange={this.handleSlider}
+                            name='luminanceSlider'
+                        />
+                    </SliderWrapper>
+                }
                 <FormControl>
                     <InputLabel htmlFor="color-format">Copy Format: Hex</InputLabel>
                     <StyledSelect

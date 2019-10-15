@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import color from "chroma-js";
+import chroma from "chroma-js";
 
 const CopyButton = styled.button`
     color: #fff;
@@ -98,14 +99,22 @@ class ColorBox extends Component{
         }
     }
 
+    colorLuminance(){
+        return chroma(this.props.color).luminance(chroma(this.props.color).luminance() + this.props.luminanceLevel/800);
+    }
+
     copyColor(){
         this.setState({copied: true}, () => {setTimeout(() =>{ this.setState({copied: false})}, 1000)});
     }
 
     render(){
+
+        const color = this.props.luminanceLevel ? this.colorLuminance() : this.props.color;
+        console.log(color);
+
         return(
-            <CopyToClipboard text={this.colorFormated()} onCopy={this.copyColor}>
-                <Box color={this.props.color}>
+            <CopyToClipboard text={color} onCopy={this.copyColor}>
+                <Box color={color}>
                     <BoxOverlay colorOverlay={this.props.color} colorCopied={this.state.copied}>
                         <CopiedSign>Copied!</CopiedSign>
                     </BoxOverlay>
@@ -114,7 +123,7 @@ class ColorBox extends Component{
                         <StyledLink to={{
                             pathname: `/shades/${this.props.name}`,
                             state: {
-                                color: this.props.color 
+                                color: this.props.color
                             }
                         }}>More</StyledLink>
                     }

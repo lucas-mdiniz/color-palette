@@ -48,7 +48,6 @@ class ColorShades extends Component{
         const 
             color = this.props.location.state.color,
             step = 1/(this.props.paleteSize + 1);
-        console.log(step);
         
         let colorShadesArray = [];
 
@@ -62,7 +61,6 @@ class ColorShades extends Component{
     }
 
     render(){
-        
         return(
             <PaletteWrapper>
                 <PaletteHeader colorFormat={this.handleFormat}></PaletteHeader>

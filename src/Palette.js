@@ -28,14 +28,20 @@ class Palette extends Component{
         super();
 
         this.state = {
-            colorFormat: 'hex'
+            colorFormat: 'hex',
+            luminanceSlider: 400
         }
 
         this.handleFormat = this.handleFormat.bind(this);
+        this.handleLuminance = this.handleLuminance.bind(this);
     }
 
     handleFormat(colorFormat){
         this.setState({colorFormat});
+    }
+
+    handleLuminance(luminanceSlider){
+        this.setState({luminanceSlider});
     }
 
     render(){
@@ -43,14 +49,14 @@ class Palette extends Component{
 
         if(this.props.palettes.length !== 0){
             paletteRender = Object.entries(this.props.palettes.filter(palette => palette.id === this.props.urlParams.match.params.id)[0]
-            .colors).map(color => <GridItem><ColorBox color={color[1]} colorFormat={this.state.colorFormat} name={color[0]} hasMore={true}/></GridItem>);  
+            .colors).map(color => <GridItem><ColorBox color={color[1]} luminanceLevel={this.state.luminanceSlider} colorFormat={this.state.colorFormat} name={color[0]} hasMore={true}/></GridItem>);  
         } else {
             paletteRender = <p>loading</p>
         }
     
         return(
             <PaletteWrapper>
-                <PaletteHeader colorFormat={this.handleFormat}></PaletteHeader>
+                <PaletteHeader colorFormat={this.handleFormat} luminanceSlider={this.handleLuminance} luminanceOn></PaletteHeader>
                 <Container>
                     {paletteRender}
                 </Container>
