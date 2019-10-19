@@ -6,6 +6,7 @@ import PaletteHeader from './PaletteHeader';
 import styled from 'styled-components';
 
 
+
 const Container = styled.div`
     display: flex;
     flex-wrap: wrap;
@@ -14,7 +15,7 @@ const Container = styled.div`
 `;
 
 const GridItem = styled.div`
-    width: 25%;
+    width: 20%;
     height: 50%;
 `;
 
@@ -27,7 +28,7 @@ const PaletteWrapper = styled.div`
 class ColorShades extends Component{
 
     static defaultProps = {
-        paleteSize: 8 
+        paleteSize: 9 
     }
 
     constructor(){
@@ -47,14 +48,36 @@ class ColorShades extends Component{
     colorShades(){
         const 
             color = this.props.location.state.color,
-            step = 1/(this.props.paleteSize + 1);
-        
-        let colorShadesArray = [];
+            luminance = chroma(color).luminance();
 
-        for(let i = step; i<=Math.ceil(1-step); i+=step){
-            if(colorShadesArray.length <this.props.paleteSize){
-                colorShadesArray.push(chroma(color).luminance(i).hex());
+        let colorShadesArray = [],
+            i=0,
+            colorUp = luminance,
+            colorDown = luminance,
+            stepDown,
+            stepUp;
+
+        if(luminance < 0.5){
+            stepUp = luminance/(this.props.paleteSize/2);
+            stepDown = (1-luminance)/(this.props.paleteSize/2);
+        } else{
+            stepDown = luminance/(this.props.paleteSize/2);
+            stepUp = (1-luminance)/(this.props.paleteSize/2);
+        }
+
+        while( i < (this.props.paleteSize/2) ){
+
+            if( i === 0 ){
+                colorShadesArray.push(color);
             }
+            else{
+                colorShadesArray.push(chroma(color).luminance(colorUp).hex());
+                colorShadesArray.unshift(chroma(color).luminance(colorDown).hex());
+            }
+
+            colorUp -= stepUp;
+            colorDown += stepDown;
+            i++;
         }
 
         return colorShadesArray;

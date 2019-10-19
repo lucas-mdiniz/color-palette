@@ -89,18 +89,22 @@ class ColorBox extends Component{
         this.copyColor = this.copyColor.bind(this);
     }
     
-    colorFormated(){
+    colorFormated(colors){
         if(this.props.colorFormat === 'hex'){
-            return(color(this.props.color).hex());
+            return(color(colors).hex());
         } else if(this.props.colorFormat === 'rgb'){
-            return(`rgb(${color(this.props.color).rgb().map(color => color)})`);
+            return(`rgb(${color(colors).rgb().map(color => color)})`);
         } else {
-            return(`rgba(${color(this.props.color).rgba().map(color => color)})`);
+            return(`rgba(${color(colors).rgba().map(color => color)})`);
         }
     }
 
     colorLuminance(){
-        return chroma(this.props.color).luminance(chroma(this.props.color).luminance() + this.props.luminanceLevel/800);
+        if(this.props.luminanceLevel !== 400){
+            return chroma(this.props.color).luminance(chroma(this.props.color).luminance() + this.props.luminanceLevel/900);
+        } else {
+            return this.props.color;
+        }
     }
 
     copyColor(){
@@ -109,8 +113,7 @@ class ColorBox extends Component{
 
     render(){
 
-        const color = this.props.luminanceLevel ? this.colorLuminance() : this.props.color;
-        console.log(color);
+        let color = this.colorFormated(this.props.luminanceLevel ? this.colorLuminance() : this.props.color);
 
         return(
             <CopyToClipboard text={color} onCopy={this.copyColor}>
