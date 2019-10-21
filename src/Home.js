@@ -18,7 +18,12 @@ class Home extends Component {
     return (
       <StyledApp>
         <Grid container spacing={10}>
-          {this.props.palettes.map((palette) => <Grid item sm={4} xs={12}><Link to ={`/palette/${palette.id}`}><MiniPalette colors={palette.colors} name={palette.name} icon={palette.icon}/></Link></Grid>)}
+          {this.props.palettes.map((palette) => 
+            <Grid item sm={4} xs={12}>
+                <Link to ={`/palette/${palette.id}`}>
+                  <MiniPalette colors={palette.colors} name={palette.name} icon={palette.icon}/>
+                </Link>
+            </Grid>)}
         </Grid>
       </StyledApp>
     );

@@ -22,7 +22,6 @@ const PaletteWrapper = styled.div`
 `;
 
 
-
 class Palette extends Component{
     constructor(){
         super();
@@ -48,15 +47,28 @@ class Palette extends Component{
         let paletteRender;
 
         if(this.props.palettes.length !== 0){
-            paletteRender = Object.entries(this.props.palettes.filter(palette => palette.id === this.props.urlParams.match.params.id)[0]
-            .colors).map(color => <GridItem><ColorBox color={color[1]} luminanceLevel={this.state.luminanceSlider} colorFormat={this.state.colorFormat} name={color[0]} hasMore={true}/></GridItem>);  
+            paletteRender = 
+                Object.entries(this.props.palettes
+                    .filter(palette => palette.id === this.props.urlParams.match.params.id)[0].colors)
+                    .map(color => <GridItem>
+                                        <ColorBox 
+                                            numberOfShades={this.props.numberOfShades} 
+                                            color={color[1]} 
+                                            name={color[0]}
+                                            luminanceLevel={this.state.luminanceSlider} 
+                                            colorFormat={this.state.colorFormat} name={color[0]} 
+                                            hasMore={true}/>
+                                    </GridItem>);  
         } else {
             paletteRender = <p>loading</p>
         }
     
         return(
             <PaletteWrapper>
-                <PaletteHeader colorFormat={this.handleFormat} luminanceSlider={this.handleLuminance} luminanceOn></PaletteHeader>
+                <PaletteHeader 
+                    colorFormat={this.handleFormat} 
+                    luminanceSlider={this.handleLuminance} 
+                    luminanceOn/>
                 <Container>
                     {paletteRender}
                 </Container>

@@ -10,6 +10,10 @@ const API = 'http://localhost:3000/'
 const DEFAULT_QUERY = 'palettes'
 
 class App extends Component {
+  static defaultProps = {
+    numberOfShades: 9 
+  }
+
   constructor(){
     super();
 
@@ -35,8 +39,8 @@ class App extends Component {
     return (
       <Switch>
         <Route exact path='/' render={() => <Home palettes={this.state.palettes}/>}/>
-        <Route exact path='/palette/:id' render={(urlParams) => <Palette palettes={this.state.palettes} loading={this.state.isLoading} urlParams={urlParams}/>}/>
-        <Route exact path='/shades/:color' render={() => <ColorShades/>}/>
+        <Route exact path='/palette/:id' render={(urlParams) => <Palette numberOfShades={this.props.numberOfShades} palettes={this.state.palettes} loading={this.state.isLoading} urlParams={urlParams}/>}/>
+        <Route exact path='/shades/:color' render={() => <ColorShades numberOfShades={this.props.numberOfShades}/>}/>
       </Switch>
     );
   }

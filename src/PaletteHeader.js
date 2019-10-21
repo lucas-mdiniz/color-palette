@@ -87,7 +87,7 @@ class PaletteHeader extends Component{
                             valueLabelDisplay="auto"
                             step={100}
                             min={50}
-                            max={800}
+                            max={900}
                             value={this.state.luminanceSlider}
                             onChange={this.handleSlider}
                             name='luminanceSlider'
