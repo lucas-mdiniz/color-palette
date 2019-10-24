@@ -4,7 +4,8 @@ import {Switch, Route} from 'react-router-dom';
 import Home from './Home';
 import Palette from './Palette';
 import ColorShades from './ColorShades';
-import axios from 'axios'
+import CreatePalette from './CreatePalette';
+import axios from 'axios';
 
 const API = 'http://localhost:3000/'
 const DEFAULT_QUERY = 'palettes'
@@ -41,6 +42,7 @@ class App extends Component {
         <Route exact path='/' render={() => <Home palettes={this.state.palettes}/>}/>
         <Route exact path='/palette/:id' render={(urlParams) => <Palette numberOfShades={this.props.numberOfShades} palettes={this.state.palettes} loading={this.state.isLoading} urlParams={urlParams}/>}/>
         <Route exact path='/shades/:color' render={() => <ColorShades numberOfShades={this.props.numberOfShades}/>}/>
+        <Route exact path='/create' render={() => <CreatePalette/>}/>
       </Switch>
     );
   }

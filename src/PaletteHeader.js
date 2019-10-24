@@ -4,13 +4,15 @@ import { Slider, MenuItem, Select, FormControl, InputLabel, withStyles, Typograp
 
 const StyledPaletteHeader = styled.div`
     background: #fff;
-    padding: 10px;
+    padding: 10px 50px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 `;
 
 const StyledSelect = styled(Select)`
     min-width: 200px;
+    margin-bottom: 16px;
 `;
 
 const SliderWrapper = styled.div`
