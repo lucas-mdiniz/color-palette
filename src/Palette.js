@@ -2,17 +2,13 @@ import React, {Component} from 'react';
 import ColorBox from './ColorBox';
 import PaletteHeader from './PaletteHeader';
 import styled from 'styled-components';
+import GridItem from './GridItem';
 
 const Container = styled.div`
     display: flex;
     flex-wrap: wrap;
     height: 90vh;
     flex-grow: 1;
-`;
-
-const GridItem = styled.div`
-    width: 20%;
-    height: 25%;
 `;
 
 const PaletteWrapper = styled.div`
@@ -56,7 +52,7 @@ class Palette extends Component{
                                             color={color[1]} 
                                             name={color[0]}
                                             luminanceLevel={this.state.luminanceSlider} 
-                                            colorFormat={this.state.colorFormat} name={color[0]} 
+                                            colorFormat={this.state.colorFormat}
                                             hasMore={true}/>
                                     </GridItem>);  
         } else {
