@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
 import { Grid} from '@material-ui/core';
-
+import GridItem from './GridItem';
 
 const MiniPaletteWrapper =  styled.div`
 
@@ -40,9 +40,9 @@ class MiniPalette extends Component{
                 <MiniPaletteWrapper>
                     <Grid container>
                         {Object.values(this.props.colors).map(color =>  
-                            <Grid item xs={3}>
+                            <GridItem cols={5} rows={4}>
                                 <MiniColorBox color={color}/>
-                            </Grid>)}
+                            </GridItem>)}
                     </Grid>
                 </MiniPaletteWrapper> 
                 <PaletteDescription>

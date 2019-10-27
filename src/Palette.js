@@ -3,13 +3,7 @@ import ColorBox from './ColorBox';
 import PaletteHeader from './PaletteHeader';
 import styled from 'styled-components';
 import GridItem from './GridItem';
-
-const Container = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    height: 90vh;
-    flex-grow: 1;
-`;
+import PaletteContainer from './PaletteContainer';
 
 const PaletteWrapper = styled.div`
     height: 100vh;
@@ -46,7 +40,7 @@ class Palette extends Component{
             paletteRender = 
                 Object.entries(this.props.palettes
                     .filter(palette => palette.id === this.props.urlParams.match.params.id)[0].colors)
-                    .map(color => <GridItem>
+                    .map(color => <GridItem cols={5} rows={4}>
                                         <ColorBox 
                                             numberOfShades={this.props.numberOfShades} 
                                             color={color[1]} 
@@ -65,9 +59,9 @@ class Palette extends Component{
                     colorFormat={this.handleFormat} 
                     luminanceSlider={this.handleLuminance} 
                     luminanceOn/>
-                <Container>
+                <PaletteContainer>
                     {paletteRender}
-                </Container>
+                </PaletteContainer>
             </PaletteWrapper>
         )
     }

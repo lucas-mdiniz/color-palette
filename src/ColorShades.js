@@ -4,20 +4,8 @@ import ColorBox from './ColorBox';
 import PaletteHeader from './PaletteHeader';
 import styled from 'styled-components';
 import {generateColorShades} from './Helper';
-
-
-
-const Container = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    height: 90vh;
-    flex-grow: 1;
-`;
-
-const GridItem = styled.div`
-    width: 20%;
-    height: 50%;
-`;
+import PaletteContainer from './PaletteContainer';
+import GridItem from './GridItem';
 
 const PaletteWrapper = styled.div`
     height: 100vh;
@@ -47,13 +35,13 @@ class ColorShades extends Component{
         return(
             <PaletteWrapper>
                 <PaletteHeader colorFormat={this.handleFormat}/>
-                <Container>
+                <PaletteContainer>
                     {generateColorShades(color).map(color => 
-                        <GridItem>
+                        <GridItem cols={5} rows={2}>
                             <ColorBox colorFormat={this.state.colorFormat} color={color}/>
                         </GridItem>
                     )}
-                </Container>
+                </PaletteContainer>
             </PaletteWrapper>
         )
     }

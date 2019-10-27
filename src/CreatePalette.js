@@ -4,8 +4,10 @@ import { SketchPicker } from 'react-color';
 import {TextField, Button} from '@material-ui/core';
 import styled from 'styled-components';
 import { StylesProvider } from '@material-ui/styles';
-import ColorBox from './ColorBox';
 import GridItem from './GridItem';
+import CreateColorBox from './CreateColorBox';
+import PaletteContainer from './PaletteContainer';
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 const StyledSketchPicker = styled(SketchPicker)`
     margin: 20px 0;
@@ -25,15 +27,8 @@ const CreatePaletteWrapper = styled.div`
     display: flex;
 `;
 
-const PaletteContainer = styled.div`
-    display: flex;
-    flex-grow: 1;
-    flex-wrap: wrap;
-    align-content: flex-start;
-`;
-
 class CreatePalette extends Component{
-    constructor(props){
+    constructor(props){ 
         super(props);
 
         this.state = {
@@ -45,6 +40,7 @@ class CreatePalette extends Component{
         this.handleChangeColorPicker = this.handleChangeColorPicker.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
     handleChangeColorPicker(color) {
@@ -65,6 +61,19 @@ class CreatePalette extends Component{
 
     }
 
+    handleDelete(name){
+
+        const newPalette = {...this.state.newPalette};
+
+        delete newPalette[name];
+
+        this.setState({newPalette});
+    }
+
+    onDragEnd() { 
+
+    }
+
     render(){
         return(
             <StylesProvider injectFirst>
@@ -82,19 +91,41 @@ class CreatePalette extends Component{
                             requireds
                             onChange = {this.handleChange}
                             value={this.state.colorName}
+                            required
                         />
                         <Button variant="contained" color="primary" onClick={this.handleSubmit}>
                             Add Color
                         </Button>
                     </StyledForm>
                 </SideBar>
-                <PaletteContainer>
-                        {Object.keys(this.state.newPalette).map(color => 
-                            <GridItem>
-                                <ColorBox color={this.state.newPalette[color]} name={color}/>
-                            </GridItem>    
+                <DragDropContext onDragEnd={this.onDragEnd}>
+                    <Droppable droppableId='dropabble'>
+                        {provided => (
+                            <PaletteContainer
+                                {...provided.droppableProps} 
+                                innerRef={provided.innerRef}
+                            >
+                                {Object.keys(this.state.newPalette).map((color, index) => 
+                                    <Draggable draggableId={color} index={index}>
+                                        {(provided) => (
+                                            <GridItem 
+                                                {...provided.draggableProps}
+                                                {...provided.dragHandleProps}
+                                                innerRef={provided.innerRef}
+                                                key={color} 
+                                                cols={5} 
+                                                rows={4}
+                                            >
+                                                <CreateColorBox color={this.state.newPalette[color]} name={color} delete={this.handleDelete}/>
+                                            </GridItem> 
+                                        )}                                   
+                                    </Draggable>
+                                )}
+                                {provided.placeholder}
+                            </PaletteContainer>
                         )}
-                </PaletteContainer>
+                    </Droppable>
+                </DragDropContext>
                 </CreatePaletteWrapper>
             </StylesProvider>
         )

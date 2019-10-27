@@ -2,14 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledGridItem = styled.div`
-    width: 20%;
-    height: 25%;
+    width: ${props=> props.cols ? (100/props.cols) : ''}%;
+    height: ${props=>  props.rows ? (100/props.rows) : ''}%;
 `;
 
 
 function GridItem(props){
     return(
-        <StyledGridItem>
+        <StyledGridItem cols={props.cols} rows={props.rows} ref={props.innerRef}>
             {props.children}
         </StyledGridItem>
     )
