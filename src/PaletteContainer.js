@@ -11,10 +11,9 @@ const StyledPaletteContainer = styled.div`
 
 function PaletteContainer(props){
     return(
-
-       <StyledPaletteContainer ref={props.innerRef}>
-           {props.children}
-       </StyledPaletteContainer> 
+        <StyledPaletteContainer >
+            {props.children}
+        </StyledPaletteContainer> 
     )
 }
 

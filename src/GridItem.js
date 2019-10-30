@@ -9,7 +9,10 @@ const StyledGridItem = styled.div`
 
 function GridItem(props){
     return(
-        <StyledGridItem cols={props.cols} rows={props.rows} ref={props.innerRef}>
+        <StyledGridItem 
+            cols={props.cols} 
+            rows={props.rows} 
+        >
             {props.children}
         </StyledGridItem>
     )

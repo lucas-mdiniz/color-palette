@@ -36,7 +36,6 @@ class CreateColorBox extends Component{
 
     render(){
         return(
-            
             <StyledCreateColorBox color={this.props.color}>
                 <ColorName>{this.props.name}</ColorName>
                 <DeleteIcon icon={faTrash} onClick={this.handleClick}/>
