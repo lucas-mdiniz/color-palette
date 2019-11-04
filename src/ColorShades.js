@@ -31,7 +31,7 @@ class ColorShades extends Component{
 
     render(){
         const color = this.props.location.state.color;
-
+        // usar a colorName como key quando criar
         return(
             <PaletteWrapper>
                 <PaletteHeader colorFormat={this.handleFormat}/>

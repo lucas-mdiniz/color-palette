@@ -112,7 +112,6 @@ class ColorBox extends Component{
     }
 
     render(){
-
         let color = this.colorFormated(this.props.luminanceLevel ? this.colorLuminance(this.props.luminanceLevel) : this.props.color);
 
         return(

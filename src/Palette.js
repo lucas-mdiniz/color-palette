@@ -35,20 +35,20 @@ class Palette extends Component{
 
     render(){
         let paletteRender;
-
         if(this.props.palettes.length !== 0){
             paletteRender = 
-                Object.entries(this.props.palettes
-                    .filter(palette => palette.id === this.props.urlParams.match.params.id)[0].colors)
-                    .map(color => <GridItem cols={5} rows={4}>
-                                        <ColorBox 
-                                            numberOfShades={this.props.numberOfShades} 
-                                            color={color[1]} 
-                                            name={color[0]}
-                                            luminanceLevel={this.state.luminanceSlider} 
-                                            colorFormat={this.state.colorFormat}
-                                            hasMore={true}/>
-                                    </GridItem>);  
+                this.props.palettes
+                    .filter(palette => palette.id === this.props.urlParams.match.params.id)[0].colors
+                    .map(color => 
+                        <GridItem cols={5} rows={4} key={color.colorName}>
+                            <ColorBox 
+                                numberOfShades={this.props.numberOfShades} 
+                                color={color.color} 
+                                name={color.colorName}
+                                luminanceLevel={this.state.luminanceSlider} 
+                                colorFormat={this.state.colorFormat}
+                                hasMore={true}/>
+                        </GridItem>);  
         } else {
             paletteRender = <p>loading</p>
         }

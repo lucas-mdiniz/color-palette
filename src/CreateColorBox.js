@@ -31,7 +31,7 @@ class CreateColorBox extends Component{
     }
     
     handleClick(){
-        this.props.delete(this.props.name);
+        this.props.delete(this.props.index);
     }
 
     render(){

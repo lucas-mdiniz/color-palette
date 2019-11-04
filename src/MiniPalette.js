@@ -40,8 +40,8 @@ class MiniPalette extends Component{
                 <MiniPaletteWrapper>
                     <Grid container>
                         {Object.values(this.props.colors).map(color =>  
-                            <GridItem cols={5} rows={4}>
-                                <MiniColorBox color={color}/>
+                            <GridItem cols={5} rows={4} key={color.colorName}>
+                                <MiniColorBox color={color.color}/>
                             </GridItem>)}
                     </Grid>
                 </MiniPaletteWrapper> 

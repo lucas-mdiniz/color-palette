@@ -18,7 +18,7 @@ class Home extends Component {
       <StyledApp> 
         <Grid container spacing={10}>
           {this.props.palettes.map((palette) => 
-            <Grid item sm={4} xs={12}>
+            <Grid item sm={4} xs={12} key={palette.id}>
                 <Link to ={`/palette/${palette.id}`}>
                   <MiniPalette colors={palette.colors} name={palette.name} icon={palette.icon}/>
                 </Link>
