@@ -7,6 +7,9 @@ import { StylesProvider } from '@material-ui/styles';
 import CreateColorBox from './CreateColorBox';
 import {SortableContainer, SortableElement} from 'react-sortable-hoc';
 import arrayMove from 'array-move';
+import { Picker } from 'emoji-mart';
+import 'emoji-mart/css/emoji-mart.css';
+import axios from 'axios';
 
 const StyledSketchPicker = styled(SketchPicker)`
     margin: 20px 0;
@@ -61,6 +64,17 @@ const StyledModal = styled(Modal)`
     justify-content: center;
 `;
 
+const ModalWrapper = styled.div`
+    background:
+    #fff;
+    min-width: 700px;
+    max-width: 90%;
+    min-height: 300px;
+    max-height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`;
 
 const SortableGrid = SortableContainer(({children}) =>
     <PaletteContainer>
@@ -87,7 +101,8 @@ class CreatePalette extends Component{
             colorName: '',
             colors: [],
             paletteName: '',
-            setOpen: false
+            setOpen: false,
+            icon: ''
         }
 
         this.handleChangeColorPicker = this.handleChangeColorPicker.bind(this);
@@ -97,6 +112,8 @@ class CreatePalette extends Component{
         this.onSortEnd = this.onSortEnd.bind(this);
         this.handleClose = this.handleClose.bind(this);
         this.handleOpen = this.handleOpen.bind(this);
+        this.addEmoji = this.addEmoji.bind(this);
+        this.handleCreatePalette = this.handleCreatePalette.bind(this);
     }
 
     handleChangeColorPicker(color) {
@@ -142,6 +159,20 @@ class CreatePalette extends Component{
         colors = arrayMove(colors, oldIndex, newIndex);
 
         this.setState({colors});
+    }
+
+    addEmoji(emoji){
+        this.setState({icon: emoji.colons});
+    }
+
+    handleCreatePalette(){
+        axios.post('http://localhost:3000/palettes',{
+            colors: this.state.colors,
+            name: this.state.paletteName,
+            icon: this.state.icon
+        }).then(function(response){
+            console.log(response);
+        });
     }
 
 
@@ -198,16 +229,24 @@ class CreatePalette extends Component{
                                     open={this.state.setOpen}
                                     onClose={this.handleClose}
                                 >   
-                                    <div style={{maxWidth: '600px', background: '#fff'}}>
+                                    <ModalWrapper>
                                         <StyledTextField
                                             error = {nameEmpty}
                                             helperText = {nameEmpty && 'The palette name required'}
-                                            name="PaletteName"
+                                            name="paletteName"
                                             label="Palette Name"
                                             onChange = {this.handleChange}
                                             value={this.state.paletteName}
-                                        />                                     
-                                    </div>
+                                        />    
+                                        <Picker set='facebook' onSelect={this.addEmoji}/>
+                                        <Button 
+                                            variant="contained" 
+                                            color="primary" 
+                                            onClick={this.handleCreatePalette}
+                                        >
+                                                Create Palette
+                                        </Button>                          
+                                    </ModalWrapper>
                                 </StyledModal>
                             </PaletteHeader>
                             <SortableGrid distance={1} axis="xy" onSortEnd ={this.onSortEnd}>

@@ -1,180 +1,231 @@
 {
-    "palettes": [
+  "palettes": [
+    {
+      "colors": [
         {
-            "colors": [
-                {
-                    "color": "red",
-                    "colorName": "red"
-                },
-                {
-                    "color": "#e8d6e5",
-                    "colorName": "color"
-                },
-                {
-                    "color": "#9C27B0",
-                    "colorName": "color2"
-                },
-                {
-                    "color": "#673AB7",
-                    "colorName": "color3"
-                },
-                {
-                    "color": "#FFC107",
-                    "colorName": "color4"
-                },
-                {
-                    "color": "#795548",
-                    "colorName": "color5"
-                },
-                {
-                    "color": "#1e4a00",
-                    "colorName": "color6"
-                },
-                {
-                    "color": "#3F51B5",
-                    "colorName": "color7"
-                },
-                {
-                    "color": "#2548fe",
-                    "colorName": "color8"
-                },
-                {
-                    "color": "#e8d6e5",
-                    "colorName": "color9"
-                },
-                {
-                    "color": "#e8d6e5",
-                    "colorName": "color10"
-                },
-                {
-                    "color": "#9C27B0",
-                    "colorName": "color11"
-                },
-                {
-                    "color": "#673AB7",
-                    "colorName": "color12"
-                },
-                {
-                    "color": "#FFC107",
-                    "colorName": "color13"
-                },
-                {
-                    "color": "#795548",
-                    "colorName": "color14"
-                },
-                {
-                    "color": "#1e4a00",
-                    "colorName": "color15"
-                },
-                {
-                    "color": "#3F51B5",
-                    "colorName": "color16"
-                },
-                {
-                    "color": "#2548fe",
-                    "colorName": "color17"
-                },
-                {
-                    "color": "#e8d6e5",
-                    "colorName": "color18"
-                },
-                {
-                    "color": "#2548fe",
-                    "colorName": "color19"
-                }
-            ],
-            "name": "crazy frog",
-            "icon": "x",
-            "colorFormat": "hex",
-            "id": "asd"
+          "color": "red",
+          "colorName": "red"
         },
         {
-            "colors": [
-                {
-                    "color": "red",
-                    "colorName": "red"
-                },
-                {
-                    "color": "#e8d6e5",
-                    "colorName": "color"
-                },
-                {
-                    "color": "#9C27B0",
-                    "colorName": "color2"
-                },
-                {
-                    "color": "#673AB7",
-                    "colorName": "color3"
-                },
-                {
-                    "color": "#FFC107",
-                    "colorName": "color4"
-                },
-                {
-                    "color": "#795548",
-                    "colorName": "color5"
-                },
-                {
-                    "color": "#1e4a00",
-                    "colorName": "color6"
-                },
-                {
-                    "color": "#3F51B5",
-                    "colorName": "color7"
-                },
-                {
-                    "color": "#2548fe",
-                    "colorName": "color8"
-                },
-                {
-                    "color": "#e8d6e5",
-                    "colorName": "color9"
-                },
-                {
-                    "color": "#e8d6e5",
-                    "colorName": "color10"
-                },
-                {
-                    "color": "#9C27B0",
-                    "colorName": "color11"
-                },
-                {
-                    "color": "#673AB7",
-                    "colorName": "color12"
-                },
-                {
-                    "color": "#FFC107",
-                    "colorName": "color13"
-                },
-                {
-                    "color": "#795548",
-                    "colorName": "color14"
-                },
-                {
-                    "color": "#1e4a00",
-                    "colorName": "color15"
-                },
-                {
-                    "color": "#3F51B5",
-                    "colorName": "color16"
-                },
-                {
-                    "color": "#2548fe",
-                    "colorName": "color17"
-                },
-                {
-                    "color": "#e8d6e5",
-                    "colorName": "color18"
-                },
-                {
-                    "color": "#2548fe",
-                    "colorName": "color19"
-                }
-            ],
-            "name": "crazy frog",
-            "icon": "x",
-            "colorFormat": "hex",
-            "id": "bbb"
+          "color": "#e8d6e5",
+          "colorName": "color"
+        },
+        {
+          "color": "#9C27B0",
+          "colorName": "color2"
+        },
+        {
+          "color": "#673AB7",
+          "colorName": "color3"
+        },
+        {
+          "color": "#FFC107",
+          "colorName": "color4"
+        },
+        {
+          "color": "#795548",
+          "colorName": "color5"
+        },
+        {
+          "color": "#1e4a00",
+          "colorName": "color6"
+        },
+        {
+          "color": "#3F51B5",
+          "colorName": "color7"
+        },
+        {
+          "color": "#2548fe",
+          "colorName": "color8"
+        },
+        {
+          "color": "#e8d6e5",
+          "colorName": "color9"
+        },
+        {
+          "color": "#e8d6e5",
+          "colorName": "color10"
+        },
+        {
+          "color": "#9C27B0",
+          "colorName": "color11"
+        },
+        {
+          "color": "#673AB7",
+          "colorName": "color12"
+        },
+        {
+          "color": "#FFC107",
+          "colorName": "color13"
+        },
+        {
+          "color": "#795548",
+          "colorName": "color14"
+        },
+        {
+          "color": "#1e4a00",
+          "colorName": "color15"
+        },
+        {
+          "color": "#3F51B5",
+          "colorName": "color16"
+        },
+        {
+          "color": "#2548fe",
+          "colorName": "color17"
+        },
+        {
+          "color": "#e8d6e5",
+          "colorName": "color18"
+        },
+        {
+          "color": "#2548fe",
+          "colorName": "color19"
         }
-    ]
+      ],
+      "name": "crazy frog",
+      "icon": "x",
+      "colorFormat": "hex",
+      "id": "asd"
+    },
+    {
+      "colors": [
+        {
+          "color": "red",
+          "colorName": "red"
+        },
+        {
+          "color": "#e8d6e5",
+          "colorName": "color"
+        },
+        {
+          "color": "#9C27B0",
+          "colorName": "color2"
+        },
+        {
+          "color": "#673AB7",
+          "colorName": "color3"
+        },
+        {
+          "color": "#FFC107",
+          "colorName": "color4"
+        },
+        {
+          "color": "#795548",
+          "colorName": "color5"
+        },
+        {
+          "color": "#1e4a00",
+          "colorName": "color6"
+        },
+        {
+          "color": "#3F51B5",
+          "colorName": "color7"
+        },
+        {
+          "color": "#2548fe",
+          "colorName": "color8"
+        },
+        {
+          "color": "#e8d6e5",
+          "colorName": "color9"
+        },
+        {
+          "color": "#e8d6e5",
+          "colorName": "color10"
+        },
+        {
+          "color": "#9C27B0",
+          "colorName": "color11"
+        },
+        {
+          "color": "#673AB7",
+          "colorName": "color12"
+        },
+        {
+          "color": "#FFC107",
+          "colorName": "color13"
+        },
+        {
+          "color": "#795548",
+          "colorName": "color14"
+        },
+        {
+          "color": "#1e4a00",
+          "colorName": "color15"
+        },
+        {
+          "color": "#3F51B5",
+          "colorName": "color16"
+        },
+        {
+          "color": "#2548fe",
+          "colorName": "color17"
+        },
+        {
+          "color": "#e8d6e5",
+          "colorName": "color18"
+        },
+        {
+          "color": "#2548fe",
+          "colorName": "color19"
+        }
+      ],
+      "name": "crazy frog",
+      "icon": "x",
+      "colorFormat": "hex",
+      "id": "bbb"
+    },
+    {
+      "colors": [
+        {
+          "colorName": "qweq",
+          "color": "#f8e71c"
+        },
+        {
+          "colorName": "qqqq",
+          "color": "#417505"
+        }
+      ],
+      "name": "",
+      "id": "Ar82nAS"
+    },
+    {
+      "colors": [
+        {
+          "colorName": "qweq",
+          "color": "#f8e71c"
+        },
+        {
+          "colorName": "qqqq",
+          "color": "#417505"
+        }
+      ],
+      "name": "qqq",
+      "id": "RWCSEBi"
+    },
+    {
+      "colors": [
+        {
+          "colorName": "asddas",
+          "color": "#8b572a"
+        },
+        {
+          "colorName": "asdasd",
+          "color": "#f8e71c"
+        },
+        {
+          "colorName": "asdasdaa",
+          "color": "#bd10e0"
+        },
+        {
+          "colorName": "aaaa",
+          "color": "#9b9b9b"
+        }
+      ],
+      "name": "teste",
+      "icon": ":boot:",
+      "id": "Id0FOXL"
+    }
+  ]
 }
