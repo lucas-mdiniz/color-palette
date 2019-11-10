@@ -175,57 +175,6 @@
       "icon": "x",
       "colorFormat": "hex",
       "id": "bbb"
-    },
-    {
-      "colors": [
-        {
-          "colorName": "qweq",
-          "color": "#f8e71c"
-        },
-        {
-          "colorName": "qqqq",
-          "color": "#417505"
-        }
-      ],
-      "name": "",
-      "id": "Ar82nAS"
-    },
-    {
-      "colors": [
-        {
-          "colorName": "qweq",
-          "color": "#f8e71c"
-        },
-        {
-          "colorName": "qqqq",
-          "color": "#417505"
-        }
-      ],
-      "name": "qqq",
-      "id": "RWCSEBi"
-    },
-    {
-      "colors": [
-        {
-          "colorName": "asddas",
-          "color": "#8b572a"
-        },
-        {
-          "colorName": "asdasd",
-          "color": "#f8e71c"
-        },
-        {
-          "colorName": "asdasdaa",
-          "color": "#bd10e0"
-        },
-        {
-          "colorName": "aaaa",
-          "color": "#9b9b9b"
-        }
-      ],
-      "name": "teste",
-      "icon": ":boot:",
-      "id": "Id0FOXL"
     }
   ]
 }

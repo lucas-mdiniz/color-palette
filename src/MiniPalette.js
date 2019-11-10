@@ -1,21 +1,11 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import { Grid} from '@material-ui/core';
-import GridItem from './GridItem';
-
-const MiniPaletteWrapper =  styled.div`
-
-`;
+import ColorBox from './ColorBox';
+import {GridContainer, GridItem} from './GridSystem';
 
 const StyledMiniPalette = styled.div`
     background: #cdcdcd;
     padding: 10px;
-`;
-
-const MiniColorBox = styled.div`
-    width: 100%;
-    height: 35px;
-    background: ${props => props.color};
 `;
 
 const PaletteIcon = styled.i`
@@ -37,14 +27,12 @@ class MiniPalette extends Component{
     render(){
         return(
             <StyledMiniPalette>
-                <MiniPaletteWrapper>
-                    <Grid container>
+                <GridContainer>
                         {Object.values(this.props.colors).map(color =>  
                             <GridItem cols={5} rows={4} key={color.colorName}>
-                                <MiniColorBox color={color.color}/>
+                                <ColorBox color={color.color}/>
                             </GridItem>)}
-                    </Grid>
-                </MiniPaletteWrapper> 
+                </GridContainer> 
                 <PaletteDescription>
                     <PaletteName>{this.props.name}</PaletteName>
                     <PaletteIcon>{this.props.icon}</PaletteIcon>   

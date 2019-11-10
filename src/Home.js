@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import styled from 'styled-components';
 import './App.css';
 import {Link} from 'react-router-dom';
+import { GridContainer, GridItem } from './GridSystem';
 
 const StyledApp = styled.div`
   max-width: 1170px;
@@ -16,14 +17,14 @@ class Home extends Component {
   render(){
     return (
       <StyledApp> 
-        <Grid container spacing={10}>
+        <GridContainer>
           {this.props.palettes.map((palette) => 
-            <Grid item sm={4} xs={12} key={palette.id}>
+            <GridItem cols={3} rows={5} key={palette.id}>
                 <Link to ={`/palette/${palette.id}`}>
                   <MiniPalette colors={palette.colors} name={palette.name} icon={palette.icon}/>
                 </Link>
-            </Grid>)}
-        </Grid>
+            </GridItem>)}
+        </GridContainer>
 
         <Link to='/create'> Create new palette </Link>
       </StyledApp>
