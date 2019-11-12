@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import ColorBox from './ColorBox';
+import CopyColorBox from './CopyColorBox';
 import PaletteHeader from './PaletteHeader';
 import styled from 'styled-components';
 import {GridItem, GridContainer} from './GridSystem';
 import {Link} from 'react-router-dom';
+import {colorFormat} from './Helper';
 
 const PaletteWrapper = styled.div`
     height: 100vh;
@@ -53,21 +54,18 @@ class Palette extends Component{
                     .filter(palette => palette.id === this.props.urlParams.match.params.id)[0].colors
                     .map(color => 
                         <GridItem cols={5} rows={4} key={color.colorName}>
-                                <ColorBox 
-                                    numberOfShades={this.props.numberOfShades} 
-                                    color={color.color} 
-                                    name={color.colorName}
-                                    copyToClipboard
-                                    luminanceLevel={this.state.luminanceSlider} 
-                                    colorFormat={this.state.colorFormat}
-                                >
-                                    <StyledLink to={{
-                                        pathname: `/shades/${this.props.name}`,
-                                        state: {
-                                            color: this.props.color
-                                        }
-                                    }}>More</StyledLink>
-                                </ColorBox>
+                            <CopyColorBox  
+                                color={colorFormat(color.color, this.state.colorFormat)} 
+                                name={color.colorName}
+                                luminanceLevel={this.state.luminanceSlider} 
+                            >
+                                <StyledLink to={{
+                                    pathname: `/shades/${color.color.substring(1)}`,
+                                    state: {
+                                        colorName: color.colorName
+                                    }
+                                }}>More</StyledLink>
+                            </CopyColorBox>
                         </GridItem>);  
         } else {
             paletteRender = <p>loading</p>

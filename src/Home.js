@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import MiniPalette from './MiniPalette';
-import Grid from '@material-ui/core/Grid';
 import styled from 'styled-components';
 import './App.css';
 import {Link} from 'react-router-dom';
@@ -19,7 +18,7 @@ class Home extends Component {
       <StyledApp> 
         <GridContainer>
           {this.props.palettes.map((palette) => 
-            <GridItem cols={3} rows={5} key={palette.id}>
+            <GridItem cols={3} key={palette.id}>
                 <Link to ={`/palette/${palette.id}`}>
                   <MiniPalette colors={palette.colors} name={palette.name} icon={palette.icon}/>
                 </Link>

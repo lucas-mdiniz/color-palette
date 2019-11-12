@@ -53,6 +53,8 @@ const StyledSlider = withStyles({
       borderRadius: 4,
     },
   })(Slider);
+
+  
 class PaletteHeader extends Component{
     constructor(){
         super();

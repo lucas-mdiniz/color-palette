@@ -27,7 +27,7 @@ class MiniPalette extends Component{
     render(){
         return(
             <StyledMiniPalette>
-                <GridContainer>
+                <GridContainer height={200}>
                         {Object.values(this.props.colors).map(color =>  
                             <GridItem cols={5} rows={4} key={color.colorName}>
                                 <ColorBox color={color.color}/>

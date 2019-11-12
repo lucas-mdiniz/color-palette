@@ -41,7 +41,7 @@ class App extends Component {
       <Switch>
         <Route exact path='/' render={() => <Home palettes={this.state.palettes}/>}/>
         <Route exact path='/palette/:id' render={(urlParams) => <Palette numberOfShades={this.props.numberOfShades} palettes={this.state.palettes} loading={this.state.isLoading} urlParams={urlParams}/>}/>
-        <Route exact path='/shades/:color' render={() => <ColorShades numberOfShades={this.props.numberOfShades}/>}/>
+        <Route exact path='/shades/:color' render={(urlParams) => <ColorShades numberOfShades={this.props.numberOfShades} urlParams={urlParams}/>}/>
         <Route exact path='/create' render={() => <CreatePalette/>}/>
       </Switch>
     );

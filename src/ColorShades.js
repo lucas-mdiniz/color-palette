@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import { withRouter } from "react-router";
-import ColorBox from './ColorBox';
+import CopyColorBox from './CopyColorBox';
 import PaletteHeader from './PaletteHeader';
 import styled from 'styled-components';
 import {generateColorShades} from './Helper';
 import PaletteContainer from './PaletteContainer';
-import GridItem from './GridItem';
+import {GridItem} from './GridSystem';
+import {colorFormat} from './Helper';
 
 const PaletteWrapper = styled.div`
     height: 100vh;
@@ -30,15 +31,16 @@ class ColorShades extends Component{
 
 
     render(){
-        const color = this.props.location.state.color;
-        // usar a colorName como key quando criar
+        const colorName = this.props.location.state.colorName;
+        const color = this.props.urlParams.match.params.color;
+
         return(
             <PaletteWrapper>
                 <PaletteHeader colorFormat={this.handleFormat}/>
                 <PaletteContainer>
                     {generateColorShades(color).map(color => 
                         <GridItem cols={5} rows={2}>
-                            <ColorBox colorFormat={this.state.colorFormat} color={color}/>
+                            <CopyColorBox color={colorFormat(color, this.state.colorFormat)} colorName={colorName}/>
                         </GridItem>
                     )}
                 </PaletteContainer>
