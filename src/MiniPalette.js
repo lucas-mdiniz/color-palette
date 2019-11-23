@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import ColorBox from './ColorBox';
 import {GridContainer, GridItem} from './GridSystem';
+import { Emoji } from 'emoji-mart';
 
 const StyledMiniPalette = styled.div`
     background: #cdcdcd;
@@ -35,7 +36,9 @@ class MiniPalette extends Component{
                 </GridContainer> 
                 <PaletteDescription>
                     <PaletteName>{this.props.name}</PaletteName>
-                    <PaletteIcon>{this.props.icon}</PaletteIcon>   
+                    <PaletteIcon>
+                        <Emoji emoji={this.props.icon} size={32}/>
+                    </PaletteIcon>   
                 </PaletteDescription>
             </StyledMiniPalette>
         )

@@ -1,29 +1,13 @@
 import React, {Component} from 'react';
 import SideBar from './SideBar';
-import { SketchPicker } from 'react-color';
-import {TextField, Button, Modal} from '@material-ui/core';
+import {Button} from '@material-ui/core';
 import styled from 'styled-components';
 import { StylesProvider } from '@material-ui/styles';
 import CreateColorBox from './CreateColorBox';
 import {SortableContainer, SortableElement} from 'react-sortable-hoc';
 import arrayMove from 'array-move';
-import { Picker } from 'emoji-mart';
-import 'emoji-mart/css/emoji-mart.css';
+import SavePalette from './SavePalette';
 import axios from 'axios';
-
-const StyledSketchPicker = styled(SketchPicker)`
-    margin: 20px 0;
-`;
-
-const StyledForm = styled.form`
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-`;
-
-const StyledTextField = styled(TextField)`
-    margin-bottom: 30px;
-`;
 
 const CreatePaletteWrapper = styled.div`
     display: flex;
@@ -42,10 +26,6 @@ const PaletteContainer = styled.div`
     align-content: flex-start;
 `;
 
-const AlertError = styled.p`
-    color: #f44336;
-`;
-
 const PaletteHeader = styled.div`
     background: #fff;
     padding 10px;
@@ -58,23 +38,11 @@ const PalleteWrapper = styled.div`
 
 `;
 
-const StyledModal = styled(Modal)`
-    display: flex;
-    align-items: center;
-    justify-content: center;
+const ColorLimitAlert = styled.p`
+    color: #f44336;
+    margin-right: 30px;
 `;
 
-const ModalWrapper = styled.div`
-    background:
-    #fff;
-    min-width: 700px;
-    max-width: 90%;
-    min-height: 300px;
-    max-height: 90%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-`;
 
 const SortableGrid = SortableContainer(({children}) =>
     <PaletteContainer>
@@ -123,7 +91,7 @@ class CreatePalette extends Component{
     handleChange(e){
         this.setState({
             [e.target.name] : e.target.value
-        })
+        });
     }
 
     handleSubmit(e){
@@ -177,86 +145,47 @@ class CreatePalette extends Component{
 
 
     render(){
-        const nameEmpty = this.state.colorName === '';
-        const validateColor = this.state.colors.filter((color) => color.colorName === this.state.colorName || color.color === this.state.colorPicker).length !== 0;
-
         return(
             <StylesProvider injectFirst>
                 <CreatePaletteWrapper>
-                    <SideBar>
-                        <StyledForm>
-                            <StyledSketchPicker
-                                color={ this.state.colorPicker }
-                                onChangeComplete={ this.handleChangeColorPicker }
-                                name="colorPicker"
-                            />
-                            <StyledTextField
-                                error = {nameEmpty}
-                                helperText = {nameEmpty && 'The name field is required'}
-                                id="standard-error"
-                                name="colorName"
-                                label="Color name"
-                                onChange = {this.handleChange}
-                                value={this.state.colorName}
-                            />
-                            {validateColor &&
-                                <AlertError>
-                                    This name or color already exists!
-                                </AlertError>
+                    <SideBar 
+                        colorPicker = {this.handleChangeColorPicker}
+                        color={this.state.colorPicker}
+                        colorName = {this.handleChange}
+                        name={this.state.colorName}
+                        colors={this.state.colors}
+                        submit={this.handleSubmit}
+                    />
+                    <PalleteWrapper>
+                        <PaletteHeader>
+                            {this.state.colors.length < 20 &&
+                            <ColorLimitAlert>Please insert 20 colors!</ColorLimitAlert>
                             }
                             <Button 
                                 variant="contained" 
                                 color="primary" 
-                                onClick={this.handleSubmit}
-                                disabled = {nameEmpty || validateColor}
+                                onClick={this.handleOpen}
+                                disabled={this.state.colors.length !== 20}
                             >
-                                    Add Color
-                            </Button>
-                        </StyledForm>
-                    </SideBar>
-                        <PalleteWrapper>
-                            <PaletteHeader>
-                                <Button 
-                                    variant="contained" 
-                                    color="primary" 
-                                    onClick={this.handleOpen}
-                                >
-                                    Save Palette
-                                </Button> 
-                                <StyledModal
-                                    aria-labelledby="simple-modal-title"
-                                    aria-describedby="simple-modal-description"
-                                    open={this.state.setOpen}
-                                    onClose={this.handleClose}
-                                >   
-                                    <ModalWrapper>
-                                        <StyledTextField
-                                            error = {nameEmpty}
-                                            helperText = {nameEmpty && 'The palette name required'}
-                                            name="paletteName"
-                                            label="Palette Name"
-                                            onChange = {this.handleChange}
-                                            value={this.state.paletteName}
-                                        />    
-                                        <Picker set='facebook' onSelect={this.addEmoji}/>
-                                        <Button 
-                                            variant="contained" 
-                                            color="primary" 
-                                            onClick={this.handleCreatePalette}
-                                        >
-                                                Create Palette
-                                        </Button>                          
-                                    </ModalWrapper>
-                                </StyledModal>
-                            </PaletteHeader>
-                            <SortableGrid distance={1} axis="xy" onSortEnd ={this.onSortEnd}>
-                                {this.state.colors.map((color, index) =>
-                                            <SortableBox index={index} key={color.color}>
-                                                <CreateColorBox color={color.color} name={color.colorName} index={index} delete={this.handleDelete}/>
-                                            </SortableBox> 
-                                )}
-                            </SortableGrid>
-                        </PalleteWrapper>
+                                Save Palette
+                            </Button> 
+                            <SavePalette
+                                open={this.state.setOpen}
+                                onClose={this.handleClose}
+                                paletteName={this.state.paletteName}
+                                changeField={this.handleChange}
+                                createPalette={this.handleCreatePalette}
+                                addEmoji = {this.addEmoji}
+                             />  
+                        </PaletteHeader>
+                        <SortableGrid distance={1} axis="xy" onSortEnd ={this.onSortEnd}>
+                            {this.state.colors.map((color, index) =>
+                                        <SortableBox index={index} key={color.color}>
+                                            <CreateColorBox color={color.color} name={color.colorName} index={index} delete={this.handleDelete}/>
+                                        </SortableBox> 
+                            )}
+                        </SortableGrid>
+                    </PalleteWrapper>
                 </CreatePaletteWrapper>
             </StylesProvider>
         )

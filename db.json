@@ -3,178 +3,89 @@
     {
       "colors": [
         {
-          "color": "red",
-          "colorName": "red"
+          "colorName": "black",
+          "color": "#000000"
         },
         {
-          "color": "#e8d6e5",
-          "colorName": "color"
+          "colorName": "zaa",
+          "color": "#4a4a4a"
         },
         {
-          "color": "#9C27B0",
-          "colorName": "color2"
+          "colorName": "asdasa",
+          "color": "#0d617c"
         },
         {
-          "color": "#673AB7",
-          "colorName": "color3"
+          "colorName": "grey",
+          "color": "#9b9b9b"
         },
         {
-          "color": "#FFC107",
-          "colorName": "color4"
+          "colorName": "ff",
+          "color": "#9013fe"
         },
         {
-          "color": "#795548",
-          "colorName": "color5"
+          "colorName": "cyan",
+          "color": "#50e3c2"
         },
         {
-          "color": "#1e4a00",
-          "colorName": "color6"
+          "colorName": " b",
+          "color": "#00ffc6"
         },
         {
-          "color": "#3F51B5",
-          "colorName": "color7"
+          "colorName": "qq",
+          "color": "#bd10e0"
         },
         {
-          "color": "#2548fe",
-          "colorName": "color8"
+          "colorName": "vvv",
+          "color": "#417505"
         },
         {
-          "color": "#e8d6e5",
-          "colorName": "color9"
+          "colorName": "qwe",
+          "color": "#468601"
         },
         {
-          "color": "#e8d6e5",
-          "colorName": "color10"
+          "colorName": "qqw",
+          "color": "#7ed321"
         },
         {
-          "color": "#9C27B0",
-          "colorName": "color11"
+          "colorName": "green",
+          "color": "#b8e986"
         },
         {
-          "color": "#673AB7",
-          "colorName": "color12"
+          "colorName": "asd",
+          "color": "#775f37"
         },
         {
-          "color": "#FFC107",
-          "colorName": "color13"
+          "colorName": "asda",
+          "color": "#6b3037"
         },
         {
-          "color": "#795548",
-          "colorName": "color14"
+          "colorName": "aaaaaaa",
+          "color": "#ad5e1d"
         },
         {
-          "color": "#1e4a00",
-          "colorName": "color15"
+          "colorName": "aaa",
+          "color": "#f5a623"
         },
         {
-          "color": "#3F51B5",
-          "colorName": "color16"
+          "colorName": "asdas",
+          "color": "#f8e71c"
         },
         {
-          "color": "#2548fe",
-          "colorName": "color17"
+          "colorName": "pink",
+          "color": "#db828d"
         },
         {
-          "color": "#e8d6e5",
-          "colorName": "color18"
+          "colorName": "red",
+          "color": "#d0021b"
         },
         {
-          "color": "#2548fe",
-          "colorName": "color19"
+          "colorName": "white",
+          "color": "#ffffff"
         }
       ],
-      "name": "crazy frog",
-      "icon": "x",
-      "colorFormat": "hex",
-      "id": "asd"
-    },
-    {
-      "colors": [
-        {
-          "color": "red",
-          "colorName": "red"
-        },
-        {
-          "color": "#e8d6e5",
-          "colorName": "color"
-        },
-        {
-          "color": "#9C27B0",
-          "colorName": "color2"
-        },
-        {
-          "color": "#673AB7",
-          "colorName": "color3"
-        },
-        {
-          "color": "#FFC107",
-          "colorName": "color4"
-        },
-        {
-          "color": "#795548",
-          "colorName": "color5"
-        },
-        {
-          "color": "#1e4a00",
-          "colorName": "color6"
-        },
-        {
-          "color": "#3F51B5",
-          "colorName": "color7"
-        },
-        {
-          "color": "#2548fe",
-          "colorName": "color8"
-        },
-        {
-          "color": "#e8d6e5",
-          "colorName": "color9"
-        },
-        {
-          "color": "#e8d6e5",
-          "colorName": "color10"
-        },
-        {
-          "color": "#9C27B0",
-          "colorName": "color11"
-        },
-        {
-          "color": "#673AB7",
-          "colorName": "color12"
-        },
-        {
-          "color": "#FFC107",
-          "colorName": "color13"
-        },
-        {
-          "color": "#795548",
-          "colorName": "color14"
-        },
-        {
-          "color": "#1e4a00",
-          "colorName": "color15"
-        },
-        {
-          "color": "#3F51B5",
-          "colorName": "color16"
-        },
-        {
-          "color": "#2548fe",
-          "colorName": "color17"
-        },
-        {
-          "color": "#e8d6e5",
-          "colorName": "color18"
-        },
-        {
-          "color": "#2548fe",
-          "colorName": "color19"
-        }
-      ],
-      "name": "crazy frog",
-      "icon": "x",
-      "colorFormat": "hex",
-      "id": "bbb"
+      "name": "Minha paleta",
+      "icon": ":flag-ar:",
+      "id": "Uc3SugJ"
     }
   ]
 }

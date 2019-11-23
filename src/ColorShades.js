@@ -31,8 +31,8 @@ class ColorShades extends Component{
 
 
     render(){
-        const colorName = this.props.location.state.colorName;
-        const color = this.props.urlParams.match.params.color;
+        const color = this.props.location.state.color;
+        const colorName = this.props.urlParams.match.params.color;
 
         return(
             <PaletteWrapper>

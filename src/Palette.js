@@ -60,9 +60,9 @@ class Palette extends Component{
                                 luminanceLevel={this.state.luminanceSlider} 
                             >
                                 <StyledLink to={{
-                                    pathname: `/shades/${color.color.substring(1)}`,
+                                    pathname: `/shades/${color.colorName}`,
                                     state: {
-                                        colorName: color.colorName
+                                        color: color.color
                                     }
                                 }}>More</StyledLink>
                             </CopyColorBox>
