@@ -86,6 +86,1050 @@
       "name": "Minha paleta",
       "icon": ":flag-ar:",
       "id": "Uc3SugJ"
+    },
+    {
+      "colors": [
+        {
+          "colorName": "asd",
+          "color": "#f8e71c"
+        },
+        {
+          "colorName": "qqq",
+          "color": "#8b572a"
+        },
+        {
+          "colorName": "as",
+          "color": "#7ed321"
+        },
+        {
+          "colorName": "s",
+          "color": "#bd10e0"
+        },
+        {
+          "colorName": "d",
+          "color": "#c0b214"
+        },
+        {
+          "colorName": "f",
+          "color": "#d9d068"
+        },
+        {
+          "colorName": "z",
+          "color": "#958b13"
+        },
+        {
+          "colorName": "x",
+          "color": "#a6a377"
+        },
+        {
+          "colorName": "c",
+          "color": "#afa85c"
+        },
+        {
+          "colorName": "v",
+          "color": "#6b662f"
+        },
+        {
+          "colorName": "b",
+          "color": "#58541f"
+        },
+        {
+          "colorName": "n",
+          "color": "#eeebc6"
+        },
+        {
+          "colorName": "m",
+          "color": "#c3b942"
+        },
+        {
+          "colorName": "q",
+          "color": "#beb11a"
+        },
+        {
+          "colorName": "w",
+          "color": "#d4c517"
+        },
+        {
+          "colorName": "e",
+          "color": "#817921"
+        },
+        {
+          "colorName": "r",
+          "color": "#d9cf59"
+        },
+        {
+          "colorName": "t",
+          "color": "#887f12"
+        },
+        {
+          "colorName": "y",
+          "color": "#a1960e"
+        },
+        {
+          "colorName": "u",
+          "color": "#d9d496"
+        }
+      ],
+      "name": "teste2",
+      "icon": ":+1:",
+      "id": "WfRjcME"
+    },
+    {
+      "colors": [
+        {
+          "colorName": "a",
+          "color": "#8b572a"
+        },
+        {
+          "colorName": "b",
+          "color": "#7ed321"
+        },
+        {
+          "colorName": "c",
+          "color": "#bd10e0"
+        },
+        {
+          "colorName": "d",
+          "color": "#7d1e90"
+        },
+        {
+          "colorName": "e",
+          "color": "#50e3c2"
+        },
+        {
+          "colorName": "h",
+          "color": "#079777"
+        },
+        {
+          "colorName": "f",
+          "color": "#22b493"
+        },
+        {
+          "colorName": "j",
+          "color": "#08a481"
+        },
+        {
+          "colorName": "k",
+          "color": "#47ffd5"
+        },
+        {
+          "colorName": "l",
+          "color": "#63b2a0"
+        },
+        {
+          "colorName": "ç",
+          "color": "#7cead1"
+        },
+        {
+          "colorName": "~",
+          "color": "#74b0a3"
+        },
+        {
+          "colorName": "]",
+          "color": "#b7f4e6"
+        },
+        {
+          "colorName": "\\",
+          "color": "#27a689"
+        },
+        {
+          "colorName": "z",
+          "color": "#87b4aa"
+        },
+        {
+          "colorName": "x",
+          "color": "#038b6c"
+        },
+        {
+          "colorName": "v",
+          "color": "#348875"
+        },
+        {
+          "colorName": "n",
+          "color": "#46cdaf"
+        },
+        {
+          "colorName": "m",
+          "color": "#a7f3e2"
+        },
+        {
+          "colorName": "w",
+          "color": "#9ef1de"
+        }
+      ],
+      "name": "teste5",
+      "icon": ":older_adult:",
+      "id": "UYUw-F8"
+    },
+    {
+      "colors": [
+        {
+          "colorName": "q",
+          "color": "#783737"
+        },
+        {
+          "colorName": "w",
+          "color": "#9a3d3d"
+        },
+        {
+          "colorName": "e",
+          "color": "#883c3c"
+        },
+        {
+          "colorName": "r",
+          "color": "#000"
+        },
+        {
+          "colorName": "t",
+          "color": "#974747"
+        },
+        {
+          "colorName": "y",
+          "color": "#ab2f2f"
+        },
+        {
+          "colorName": "u",
+          "color": "#f46767"
+        },
+        {
+          "colorName": "i",
+          "color": "#db9595"
+        },
+        {
+          "colorName": "o",
+          "color": "#ff6363"
+        },
+        {
+          "colorName": "p",
+          "color": "#a80606"
+        },
+        {
+          "colorName": "a",
+          "color": "#d29b9b"
+        },
+        {
+          "colorName": "s",
+          "color": "#d66161"
+        },
+        {
+          "colorName": "d",
+          "color": "#750505"
+        },
+        {
+          "colorName": "f",
+          "color": "#ffa8a8"
+        },
+        {
+          "colorName": "g",
+          "color": "#c13232"
+        },
+        {
+          "colorName": "h",
+          "color": "#e30b0b"
+        },
+        {
+          "colorName": "j",
+          "color": "#c55f5f"
+        },
+        {
+          "colorName": "k",
+          "color": "#ff9696"
+        },
+        {
+          "colorName": "l",
+          "color": "#ca4444"
+        },
+        {
+          "colorName": "z",
+          "color": "#fdd7d7"
+        }
+      ],
+      "name": "agora vai",
+      "icon": ":flag-ba:",
+      "id": "Uy9bQFA"
+    },
+    {
+      "colors": [
+        {
+          "colorName": "s",
+          "color": "#7ed321"
+        },
+        {
+          "colorName": "q",
+          "color": "#bd10e0"
+        },
+        {
+          "colorName": "e",
+          "color": "#e97cff"
+        },
+        {
+          "colorName": "r",
+          "color": "#673071"
+        },
+        {
+          "colorName": "t",
+          "color": "#832895"
+        },
+        {
+          "colorName": "y",
+          "color": "#52195d"
+        },
+        {
+          "colorName": "u",
+          "color": "#380742"
+        },
+        {
+          "colorName": "i",
+          "color": "#e8a9f4"
+        },
+        {
+          "colorName": "o",
+          "color": "#b761c8"
+        },
+        {
+          "colorName": "p",
+          "color": "#9d12b9"
+        },
+        {
+          "colorName": "a",
+          "color": "#4b1a55"
+        },
+        {
+          "colorName": "d",
+          "color": "#642371"
+        },
+        {
+          "colorName": "f",
+          "color": "#b760ca"
+        },
+        {
+          "colorName": "g",
+          "color": "#c787d4"
+        },
+        {
+          "colorName": "h",
+          "color": "#811997"
+        },
+        {
+          "colorName": "j",
+          "color": "#d5a9de"
+        },
+        {
+          "colorName": "k",
+          "color": "#341839"
+        },
+        {
+          "colorName": "l",
+          "color": "#d697e3"
+        },
+        {
+          "colorName": "z",
+          "color": "#f2e8f4"
+        },
+        {
+          "colorName": "x",
+          "color": "#450353"
+        }
+      ],
+      "name": "rwsre1",
+      "icon": ":flag-ba:",
+      "id": "Nx55HDY"
+    },
+    {
+      "colors": [
+        {
+          "colorName": "q",
+          "color": "#f5a623"
+        },
+        {
+          "colorName": "w",
+          "color": "#d68c11"
+        },
+        {
+          "colorName": "e",
+          "color": "#fda617"
+        },
+        {
+          "colorName": "r",
+          "color": "#734d0d"
+        },
+        {
+          "colorName": "t",
+          "color": "#b49560"
+        },
+        {
+          "colorName": "y",
+          "color": "#e2c89e"
+        },
+        {
+          "colorName": "u",
+          "color": "#996206"
+        },
+        {
+          "colorName": "i",
+          "color": "#bc7c0f"
+        },
+        {
+          "colorName": "o",
+          "color": "#deceb3"
+        },
+        {
+          "colorName": "p",
+          "color": "#f3b753"
+        },
+        {
+          "colorName": "a",
+          "color": "#7a6849"
+        },
+        {
+          "colorName": "s",
+          "color": "#735c36"
+        },
+        {
+          "colorName": "d",
+          "color": "#624b22"
+        },
+        {
+          "colorName": "f",
+          "color": "#583f15"
+        },
+        {
+          "colorName": "g",
+          "color": "#62430d"
+        },
+        {
+          "colorName": "h",
+          "color": "#5b3b04"
+        },
+        {
+          "colorName": "j",
+          "color": "#774d04"
+        },
+        {
+          "colorName": "k",
+          "color": "#b47508"
+        },
+        {
+          "colorName": "l",
+          "color": "#dd8f08"
+        },
+        {
+          "colorName": "z",
+          "color": "#f39b04"
+        }
+      ],
+      "name": "foi",
+      "icon": ":flag-bj:",
+      "id": "PVzix3k"
+    },
+    {
+      "colors": [
+        {
+          "colorName": "a",
+          "color": "#a62a2a"
+        },
+        {
+          "colorName": "b",
+          "color": "#c38e8e"
+        },
+        {
+          "colorName": "c",
+          "color": "#ab4949"
+        },
+        {
+          "colorName": "d",
+          "color": "#662121"
+        },
+        {
+          "colorName": "e",
+          "color": "#f15c5c"
+        },
+        {
+          "colorName": "f",
+          "color": "#ff1d1d"
+        },
+        {
+          "colorName": "g",
+          "color": "#7a1a1a"
+        },
+        {
+          "colorName": "h",
+          "color": "#510606"
+        },
+        {
+          "colorName": "i",
+          "color": "#a87c7c"
+        },
+        {
+          "colorName": "j",
+          "color": "#7d1c1c"
+        },
+        {
+          "colorName": "k",
+          "color": "#f6b1b1"
+        },
+        {
+          "colorName": "l",
+          "color": "#970707"
+        },
+        {
+          "colorName": "m",
+          "color": "#ec3939"
+        },
+        {
+          "colorName": "n",
+          "color": "#000"
+        },
+        {
+          "colorName": "o",
+          "color": "#862121"
+        },
+        {
+          "colorName": "p",
+          "color": "#8e1717"
+        },
+        {
+          "colorName": "q",
+          "color": "#c68585"
+        },
+        {
+          "colorName": "r",
+          "color": "#fd7979"
+        },
+        {
+          "colorName": "s",
+          "color": "#aa3b3b"
+        },
+        {
+          "colorName": "t",
+          "color": "#e71919"
+        }
+      ],
+      "name": "aaa",
+      "icon": ":male-judge:",
+      "id": "EKl5F4P"
+    },
+    {
+      "colors": [
+        {
+          "colorName": "q",
+          "color": "#7ed321"
+        },
+        {
+          "colorName": "w",
+          "color": "#68b513"
+        },
+        {
+          "colorName": "e",
+          "color": "#498805"
+        },
+        {
+          "colorName": "r",
+          "color": "#c3f38f"
+        },
+        {
+          "colorName": "t",
+          "color": "#61a11b"
+        },
+        {
+          "colorName": "y",
+          "color": "#66a126"
+        },
+        {
+          "colorName": "u",
+          "color": "#4f7328"
+        },
+        {
+          "colorName": "i",
+          "color": "#3a5d14"
+        },
+        {
+          "colorName": "o",
+          "color": "#1a2f03"
+        },
+        {
+          "colorName": "p",
+          "color": "#79dd0c"
+        },
+        {
+          "colorName": "a",
+          "color": "#96db4c"
+        },
+        {
+          "colorName": "s",
+          "color": "#4c7c19"
+        },
+        {
+          "colorName": "d",
+          "color": "#27400c"
+        },
+        {
+          "colorName": "f",
+          "color": "#172803"
+        },
+        {
+          "colorName": "g",
+          "color": "#0f1905"
+        },
+        {
+          "colorName": "h",
+          "color": "#132005"
+        },
+        {
+          "colorName": "j",
+          "color": "#445135"
+        },
+        {
+          "colorName": "k",
+          "color": "#3d5126"
+        },
+        {
+          "colorName": "l",
+          "color": "#2a381b"
+        },
+        {
+          "colorName": "z",
+          "color": "#20310f"
+        }
+      ],
+      "name": "ddd",
+      "icon": ":see_no_evil:",
+      "id": "4lesNz6"
+    },
+    {
+      "colors": [
+        {
+          "colorName": "h",
+          "color": "#844510"
+        },
+        {
+          "colorName": "s",
+          "color": "#000"
+        },
+        {
+          "colorName": "q",
+          "color": "#9c5b23"
+        },
+        {
+          "colorName": "w",
+          "color": "#7a4010"
+        },
+        {
+          "colorName": "e",
+          "color": "#d16a15"
+        },
+        {
+          "colorName": "r",
+          "color": "#c58755"
+        },
+        {
+          "colorName": "t",
+          "color": "#f8aa69"
+        },
+        {
+          "colorName": "y",
+          "color": "#d28443"
+        },
+        {
+          "colorName": "u",
+          "color": "#e3c9b4"
+        },
+        {
+          "colorName": "i",
+          "color": "#ffbb83"
+        },
+        {
+          "colorName": "o",
+          "color": "#fb821e"
+        },
+        {
+          "colorName": "p",
+          "color": "#fba65f"
+        },
+        {
+          "colorName": "d",
+          "color": "#eeba8f"
+        },
+        {
+          "colorName": "f",
+          "color": "#e0a87a"
+        },
+        {
+          "colorName": "g",
+          "color": "#3d2512"
+        },
+        {
+          "colorName": "j",
+          "color": "#cd905d"
+        },
+        {
+          "colorName": "k",
+          "color": "#dd7a29"
+        },
+        {
+          "colorName": "l",
+          "color": "#ad5811"
+        },
+        {
+          "colorName": "z",
+          "color": "#f3caa7"
+        },
+        {
+          "colorName": "a",
+          "color": "#8b572a"
+        }
+      ],
+      "name": "asdfg",
+      "icon": ":unamused:",
+      "id": "tH9RLNB"
+    },
+    {
+      "colors": [
+        {
+          "colorName": "a",
+          "color": "#490a0a"
+        },
+        {
+          "colorName": "b",
+          "color": "#417505"
+        },
+        {
+          "colorName": "q",
+          "color": "#f8e71c"
+        },
+        {
+          "colorName": "w",
+          "color": "#5c9a14"
+        },
+        {
+          "colorName": "e",
+          "color": "#3e6c09"
+        },
+        {
+          "colorName": "r",
+          "color": "#89db2b"
+        },
+        {
+          "colorName": "t",
+          "color": "#a5e25f"
+        },
+        {
+          "colorName": "y",
+          "color": "#738e53"
+        },
+        {
+          "colorName": "u",
+          "color": "#c8f98f"
+        },
+        {
+          "colorName": "i",
+          "color": "#547331"
+        },
+        {
+          "colorName": "o",
+          "color": "#4a7f0c"
+        },
+        {
+          "colorName": "p",
+          "color": "#000"
+        },
+        {
+          "colorName": "s",
+          "color": "#6a844b"
+        },
+        {
+          "colorName": "d",
+          "color": "#83ab56"
+        },
+        {
+          "colorName": "f",
+          "color": "#49701d"
+        },
+        {
+          "colorName": "g",
+          "color": "#498408"
+        },
+        {
+          "colorName": "h",
+          "color": "#31451b"
+        },
+        {
+          "colorName": "j",
+          "color": "#bae886"
+        },
+        {
+          "colorName": "k",
+          "color": "#98e544"
+        },
+        {
+          "colorName": "l",
+          "color": "#192d02"
+        }
+      ],
+      "name": "aehooo",
+      "icon": ":rolling_on_the_floor_laughing:",
+      "id": "ds8PkeC"
+    },
+    {
+      "colors": [
+        {
+          "colorName": "a",
+          "color": "#8b572a"
+        },
+        {
+          "colorName": "q",
+          "color": "#a8774c"
+        },
+        {
+          "colorName": "w",
+          "color": "#b26f35"
+        },
+        {
+          "colorName": "e",
+          "color": "#b26c30"
+        },
+        {
+          "colorName": "t",
+          "color": "#3d2613"
+        },
+        {
+          "colorName": "y",
+          "color": "#2a1605"
+        },
+        {
+          "colorName": "u",
+          "color": "#c58752"
+        },
+        {
+          "colorName": "o",
+          "color": "#eecbad"
+        },
+        {
+          "colorName": "p",
+          "color": "#7c5431"
+        },
+        {
+          "colorName": "s",
+          "color": "#ee9344"
+        },
+        {
+          "colorName": "d",
+          "color": "#eca363"
+        },
+        {
+          "colorName": "f",
+          "color": "#9c581d"
+        },
+        {
+          "colorName": "g",
+          "color": "#995215"
+        },
+        {
+          "colorName": "h",
+          "color": "#62350d"
+        },
+        {
+          "colorName": "j",
+          "color": "#733805"
+        },
+        {
+          "colorName": "k",
+          "color": "#e39e62"
+        },
+        {
+          "colorName": "l",
+          "color": "#de6c09"
+        },
+        {
+          "colorName": "z",
+          "color": "#e8b486"
+        },
+        {
+          "colorName": "x",
+          "color": "#d19058"
+        },
+        {
+          "colorName": "c",
+          "color": "#925928"
+        }
+      ],
+      "name": "a",
+      "icon": ":alien:",
+      "id": "EihsrsP"
+    },
+    {
+      "colors": [
+        {
+          "colorName": "q",
+          "color": "#7c2d2d"
+        },
+        {
+          "colorName": "w",
+          "color": "#bc0b0b"
+        },
+        {
+          "colorName": "e",
+          "color": "#933f3f"
+        },
+        {
+          "colorName": "r",
+          "color": "#fd6f6f"
+        },
+        {
+          "colorName": "t",
+          "color": "#4a1616"
+        },
+        {
+          "colorName": "y",
+          "color": "#d98989"
+        },
+        {
+          "colorName": "u",
+          "color": "#d94b4b"
+        },
+        {
+          "colorName": "i",
+          "color": "#b20606"
+        },
+        {
+          "colorName": "o",
+          "color": "#c52929"
+        },
+        {
+          "colorName": "p",
+          "color": "#e04141"
+        },
+        {
+          "colorName": "a",
+          "color": "#ea9696"
+        },
+        {
+          "colorName": "s",
+          "color": "#893e3e"
+        },
+        {
+          "colorName": "d",
+          "color": "#6c3030"
+        },
+        {
+          "colorName": "f",
+          "color": "#7c1b1b"
+        },
+        {
+          "colorName": "g",
+          "color": "#781c1c"
+        },
+        {
+          "colorName": "h",
+          "color": "#331b1b"
+        },
+        {
+          "colorName": "j",
+          "color": "#160303"
+        },
+        {
+          "colorName": "k",
+          "color": "#901b1b"
+        },
+        {
+          "colorName": "l",
+          "color": "#c83a3a"
+        },
+        {
+          "colorName": "ç",
+          "color": "#000"
+        }
+      ],
+      "name": "essa é nova",
+      "icon": ":tiger:",
+      "id": "pkUWOOd"
+    },
+    {
+      "colors": [
+        {
+          "colorName": "q",
+          "color": "#db7217"
+        },
+        {
+          "colorName": "w",
+          "color": "#ea7815"
+        },
+        {
+          "colorName": "e",
+          "color": "#f68e34"
+        },
+        {
+          "colorName": "r",
+          "color": "#f19342"
+        },
+        {
+          "colorName": "t",
+          "color": "#fba050"
+        },
+        {
+          "colorName": "y",
+          "color": "#de9f68"
+        },
+        {
+          "colorName": "u",
+          "color": "#ecae78"
+        },
+        {
+          "colorName": "i",
+          "color": "#f3b279"
+        },
+        {
+          "colorName": "o",
+          "color": "#d19058"
+        },
+        {
+          "colorName": "p",
+          "color": "#cc5f01"
+        },
+        {
+          "colorName": "a",
+          "color": "#db6802"
+        },
+        {
+          "colorName": "s",
+          "color": "#994a05"
+        },
+        {
+          "colorName": "d",
+          "color": "#733701"
+        },
+        {
+          "colorName": "f",
+          "color": "#f97602"
+        },
+        {
+          "colorName": "g",
+          "color": "#9e4a01"
+        },
+        {
+          "colorName": "h",
+          "color": "#6b3201"
+        },
+        {
+          "colorName": "j",
+          "color": "#492302"
+        },
+        {
+          "colorName": "k",
+          "color": "#231101"
+        },
+        {
+          "colorName": "l",
+          "color": "#402d1c"
+        },
+        {
+          "colorName": "m",
+          "color": "#40250e"
+        }
+      ],
+      "name": "50 tons de laranja",
+      "icon": ":flag-bw:",
+      "id": "a2bJivF"
     }
   ]
 }

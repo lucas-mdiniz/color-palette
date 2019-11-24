@@ -20,8 +20,10 @@ class App extends Component {
 
     this.state = {
       palettes: [],
-      isLoading: false
+      isLoading: true
     }
+
+    this.handleUpdate = this.handleUpdate.bind(this);
   }
 
   async componentDidMount(){
@@ -35,6 +37,16 @@ class App extends Component {
     });
   }
 
+  handleUpdate(response){
+
+    const newPalettes = [...this.state.palettes, response.data];
+
+    this.setState({
+      palettes: newPalettes,
+      isLoading:false
+    });
+  }
+
   render(){
 
     return (
@@ -42,7 +54,7 @@ class App extends Component {
         <Route exact path='/' render={() => <Home palettes={this.state.palettes}/>}/>
         <Route exact path='/palette/:id' render={(urlParams) => <Palette numberOfShades={this.props.numberOfShades} palettes={this.state.palettes} loading={this.state.isLoading} urlParams={urlParams}/>}/>
         <Route exact path='/shades/:color' render={(urlParams) => <ColorShades numberOfShades={this.props.numberOfShades} urlParams={urlParams}/>}/>
-        <Route exact path='/create' render={() => <CreatePalette/>}/>
+        <Route exact path='/create' render={(urlParams) => <CreatePalette urlParams={urlParams} palettesUpdate={this.handleUpdate}/>}/>
       </Switch>
     );
   }

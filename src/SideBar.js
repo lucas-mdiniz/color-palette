@@ -15,16 +15,16 @@ const StyledSidebar = styled.div`
     justify-content: center;
     max-width: 450px;
     box-sizing: border-box;
-    position: relative;
-    transform: translateX(${props => (props.open ? '0' : 'calc(-100% + 44px)')});
     transition: 500ms;
+    margin-left: ${props => (props.open ? '0' : `-${document.querySelector(StyledSidebar).offsetWidth - 60}px`)};
+    position: relative;
 `;
 
 const CloseArrow = styled(FontAwesomeIcon)`
     color: #979797;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 10px;
+    right: 10px;
     padding: 10px 15px;
     cursor: pointer;
     display: block !important;
@@ -53,22 +53,16 @@ class SideBar extends Component{
     constructor(){
         super();
 
-        this.state = {
-            sideBarOpen: true,
-        }
-
-        this.handleClose = this.handleClose.bind(this);
         this.handleChangeColorPicker = this.handleChangeColorPicker.bind(this);
-    }
-
-    handleClose(e){
-        e.preventDefault();
-
-        this.setState(previousState => ({sideBarOpen: !previousState.sideBarOpen}));
+        this.handleSidebarClose = this.handleSidebarClose.bind(this);
     }
 
     handleChangeColorPicker(color) {
         this.props.colorPicker(color)    
+    }
+
+    handleSidebarClose(){
+        this.props.handleClose();
     }
 
     render(){
@@ -76,7 +70,7 @@ class SideBar extends Component{
         const validateColor = this.props.colors.filter((color) => color.colorName === this.props.name || color.color === this.props.color).length !== 0;
 
         return(
-            <StyledSidebar open={this.state.sideBarOpen}>
+            <StyledSidebar open={this.props.sideBarOpen}>
                 <StyledForm>
                     <StyledSketchPicker
                         color={ this.props.color}
@@ -107,9 +101,9 @@ class SideBar extends Component{
                     </Button>
                 </StyledForm>
                 <CloseArrow 
-                    icon={this.state.sideBarOpen ? faArrowLeft : faArrowRight} 
-                    open={this.state.sideBarOpen} 
-                    onClick={this.handleClose}
+                    icon={this.props.sideBarOpen ? faArrowLeft : faArrowRight} 
+                    open={this.props.sideBarOpen} 
+                    onClick={this.handleSidebarClose}
                 />
             </StyledSidebar>
         )

@@ -8,6 +8,7 @@ import {SortableContainer, SortableElement} from 'react-sortable-hoc';
 import arrayMove from 'array-move';
 import SavePalette from './SavePalette';
 import axios from 'axios';
+import {GridContainer} from './GridSystem';
 
 const CreatePaletteWrapper = styled.div`
     display: flex;
@@ -16,14 +17,6 @@ const CreatePaletteWrapper = styled.div`
 const GridItem = styled.div`
     width: ${props=> props.cols ? (100/props.cols) : ''}%;
     height: ${props=>  props.rows  ? (100/props.rows) : ''}%;
-`;
-
-const PaletteContainer = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    height: 90vh;
-    flex-grow: 1;
-    align-content: flex-start;
 `;
 
 const PaletteHeader = styled.div`
@@ -35,7 +28,8 @@ const PaletteHeader = styled.div`
 
 const PalleteWrapper = styled.div`
     width: 100%;
-
+    display: flex;
+    flex-flow: column;
 `;
 
 const ColorLimitAlert = styled.p`
@@ -45,9 +39,9 @@ const ColorLimitAlert = styled.p`
 
 
 const SortableGrid = SortableContainer(({children}) =>
-    <PaletteContainer>
+    <GridContainer>
         {children}
-    </PaletteContainer>
+    </GridContainer>
 );
 
 const SortableBox = SortableElement(({children}) =>
@@ -70,7 +64,8 @@ class CreatePalette extends Component{
             colors: [],
             paletteName: '',
             setOpen: false,
-            icon: ''
+            icon: '',
+            sideBarOpen: true
         }
 
         this.handleChangeColorPicker = this.handleChangeColorPicker.bind(this);
@@ -82,6 +77,7 @@ class CreatePalette extends Component{
         this.handleOpen = this.handleOpen.bind(this);
         this.addEmoji = this.addEmoji.bind(this);
         this.handleCreatePalette = this.handleCreatePalette.bind(this);
+        this.handleSidebarClose = this.handleSidebarClose.bind(this);
     }
 
     handleChangeColorPicker(color) {
@@ -138,13 +134,19 @@ class CreatePalette extends Component{
             colors: this.state.colors,
             name: this.state.paletteName,
             icon: this.state.icon
-        }).then(function(response){
-            console.log(response);
+        }).then((response) => {
+            this.props.urlParams.history.push('/');
+            this.props.palettesUpdate(response);
         });
+    }
+
+    handleSidebarClose(){
+        this.setState(previousState => ({sideBarOpen: !previousState.sideBarOpen}));
     }
 
 
     render(){
+        console.log(this.props.urlParams.history);
         return(
             <StylesProvider injectFirst>
                 <CreatePaletteWrapper>
@@ -155,6 +157,8 @@ class CreatePalette extends Component{
                         name={this.state.colorName}
                         colors={this.state.colors}
                         submit={this.handleSubmit}
+                        handleClose={this.handleSidebarClose}
+                        sideBarOpen={this.state.sideBarOpen}
                     />
                     <PalleteWrapper>
                         <PaletteHeader>

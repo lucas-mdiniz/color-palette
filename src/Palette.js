@@ -78,7 +78,7 @@ class Palette extends Component{
                     luminanceSlider={this.handleLuminance} 
                     luminanceOn
                 />
-                <GridContainer  onClick={this.teste}>
+                <GridContainer>
                     {paletteRender}
                 </GridContainer>
             </PaletteWrapper>
