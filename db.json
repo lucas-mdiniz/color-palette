@@ -1130,6 +1130,93 @@
       "name": "50 tons de laranja",
       "icon": ":flag-bw:",
       "id": "a2bJivF"
+    },
+    {
+      "colors": [
+        {
+          "colorName": "a",
+          "color": "#379893"
+        },
+        {
+          "colorName": "q",
+          "color": "#74d299"
+        },
+        {
+          "colorName": "w",
+          "color": "#49c01c"
+        },
+        {
+          "colorName": "e",
+          "color": "#04bb86"
+        },
+        {
+          "colorName": "r",
+          "color": "#ee821b"
+        },
+        {
+          "colorName": "t",
+          "color": "#974de1"
+        },
+        {
+          "colorName": "y",
+          "color": "#92fa67"
+        },
+        {
+          "colorName": "u",
+          "color": "#56bd8f"
+        },
+        {
+          "colorName": "i",
+          "color": "#6128f5"
+        },
+        {
+          "colorName": "o",
+          "color": "#cdf2ba"
+        },
+        {
+          "colorName": "p",
+          "color": "#b95f8f"
+        },
+        {
+          "colorName": "s",
+          "color": "#4ff683"
+        },
+        {
+          "colorName": "d",
+          "color": "#9fc537"
+        },
+        {
+          "colorName": "f",
+          "color": "#ceda1a"
+        },
+        {
+          "colorName": "g",
+          "color": "#08cc6a"
+        },
+        {
+          "colorName": "h",
+          "color": "#dbfa1a"
+        },
+        {
+          "colorName": "j",
+          "color": "#e4a5a8"
+        },
+        {
+          "colorName": "k",
+          "color": "#a0c485"
+        },
+        {
+          "colorName": "l",
+          "color": "#2c0a87"
+        },
+        {
+          "colorName": "ç",
+          "color": "#a6c8c0"
+        }
+      ],
+      "name": "random colors",
+      "icon": ":eyeglasses:",
+      "id": "3gd6NaU"
     }
   ]
 }

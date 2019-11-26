@@ -18,6 +18,7 @@ const StyledSidebar = styled.div`
     transition: 500ms;
     margin-left: ${props => (props.open ? '0' : `-${document.querySelector(StyledSidebar).offsetWidth - 60}px`)};
     position: relative;
+    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
 `;
 
 const CloseArrow = styled(FontAwesomeIcon)`
@@ -55,6 +56,7 @@ class SideBar extends Component{
 
         this.handleChangeColorPicker = this.handleChangeColorPicker.bind(this);
         this.handleSidebarClose = this.handleSidebarClose.bind(this);
+        this.handleGenerateColor = this.handleGenerateColor.bind(this);
     }
 
     handleChangeColorPicker(color) {
@@ -65,13 +67,27 @@ class SideBar extends Component{
         this.props.handleClose();
     }
 
+    handleGenerateColor(e){
+        e.preventDefault();
+
+        this.props.generateColor();
+    }
+
     render(){
         const nameEmpty = this.props.name === '';
         const validateColor = this.props.colors.filter((color) => color.colorName === this.props.name || color.color === this.props.color).length !== 0;
+        const limitQuantity =  this.props.colors.length >= 20;
 
         return(
             <StyledSidebar open={this.props.sideBarOpen}>
                 <StyledForm>
+                    <Button 
+                        variant="contained" 
+                        color="primary" 
+                        onClick={this.handleGenerateColor}
+                    >
+                            Random Color
+                    </Button>
                     <StyledSketchPicker
                         color={ this.props.color}
                         onChangeComplete={ this.handleChangeColorPicker }
@@ -89,16 +105,21 @@ class SideBar extends Component{
                     {validateColor &&
                         <AlertError>
                             This name or color already exists!
-                        </AlertError>
+                        </AlertError    >
                     }
                     <Button 
                         variant="contained" 
                         color="primary" 
                         onClick={this.props.submit}
-                        disabled = {nameEmpty || validateColor}
+                        disabled = {nameEmpty || validateColor || limitQuantity}
                     >
                             Add Color
                     </Button>
+                    {limitQuantity &&
+                        <AlertError>
+                            You already have 20 colors!
+                        </AlertError    >
+                    }
                 </StyledForm>
                 <CloseArrow 
                     icon={this.props.sideBarOpen ? faArrowLeft : faArrowRight} 

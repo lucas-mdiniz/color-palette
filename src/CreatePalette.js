@@ -9,6 +9,7 @@ import arrayMove from 'array-move';
 import SavePalette from './SavePalette';
 import axios from 'axios';
 import {GridContainer} from './GridSystem';
+import chroma from 'chroma-js';
 
 const CreatePaletteWrapper = styled.div`
     display: flex;
@@ -78,10 +79,13 @@ class CreatePalette extends Component{
         this.addEmoji = this.addEmoji.bind(this);
         this.handleCreatePalette = this.handleCreatePalette.bind(this);
         this.handleSidebarClose = this.handleSidebarClose.bind(this);
+        this.generateColor = this.generateColor.bind(this);
     }
 
     handleChangeColorPicker(color) {
-        this.setState({ colorPicker: color.hex })
+        const newColor = chroma(color.rgb).hex();
+        console.log(chroma([126,60,60,0.64]).hex());
+        this.setState({ colorPicker: newColor })
     };
 
     handleChange(e){
@@ -144,9 +148,15 @@ class CreatePalette extends Component{
         this.setState(previousState => ({sideBarOpen: !previousState.sideBarOpen}));
     }
 
+    generateColor(){
+        const color = chroma.random().hex();
+
+        this.setState({colorPicker: color});
+
+    }
+
 
     render(){
-        console.log(this.props.urlParams.history);
         return(
             <StylesProvider injectFirst>
                 <CreatePaletteWrapper>
@@ -159,6 +169,7 @@ class CreatePalette extends Component{
                         submit={this.handleSubmit}
                         handleClose={this.handleSidebarClose}
                         sideBarOpen={this.state.sideBarOpen}
+                        generateColor={this.generateColor}
                     />
                     <PalleteWrapper>
                         <PaletteHeader>
