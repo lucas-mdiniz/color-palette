@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import { Slider, MenuItem, Select, FormControl, InputLabel, withStyles, Typography } from '@material-ui/core';
+import { Slider, MenuItem, Select, FormControl, InputLabel, withStyles, Typography, Button } from '@material-ui/core';
+import { withRouter } from "react-router";
 
 const StyledPaletteHeader = styled.div`
     background: #fff;
@@ -66,6 +67,7 @@ class PaletteHeader extends Component{
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSlider = this.handleSlider.bind(this);
+        this.handleBack = this.handleBack.bind(this);
     }
     
     handleChange(e, value){
@@ -80,6 +82,12 @@ class PaletteHeader extends Component{
         }, () => this.props.luminanceSlider(this.state.luminanceSlider));
     }
     
+    handleBack(){
+        
+        this.props.history.goBack();
+
+    }
+
     render(){
         return(
             <StyledPaletteHeader>
@@ -113,9 +121,12 @@ class PaletteHeader extends Component{
                         <MenuItem value={'rgba'}>Copy Format: RGBA</MenuItem>
                     </StyledSelect>
                 </FormControl>
+                { this.props.backButton &&
+                    <Button variant="contained" onClick={this.handleBack}>Back</Button>
+                }
             </StyledPaletteHeader>
         );
     }
 }
 
-export default PaletteHeader;
+export default withRouter(PaletteHeader);

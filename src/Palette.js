@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import {GridItem, GridContainer} from './GridSystem';
 import {Link} from 'react-router-dom';
 import {colorFormat} from './Helper';
+import chroma from 'chroma-js';
 
 const PaletteWrapper = styled.div`
     height: 100vh;
@@ -14,12 +15,12 @@ const PaletteWrapper = styled.div`
 
 const StyledLink = styled(Link)`
     text-decoration: none;
-    background: rgba(255,255,255,.3);
+    color: ${props => chroma(props.color).luminance() > 0.4 ? '#000' : '#fff'};
+    background: ${props => chroma(props.color).luminance() > 0.4 ? 'rgba(0,0,0,.3)' : 'rgba(255,255,255,.3)'};
     position: absolute;
     bottom: 0;
     right: 0;
     padding: 7px 14px;
-    color: #fff;
 `;
 
 
@@ -55,16 +56,18 @@ class Palette extends Component{
                     .map(color => 
                         <GridItem cols={5} rows={4} key={color.colorName}>
                             <CopyColorBox  
-                                color={colorFormat(color.color, this.state.colorFormat)} 
+                                color={colorFormat(color.shades[this.state.luminanceSlider], this.state.colorFormat)} 
                                 name={color.colorName}
-                                luminanceLevel={this.state.luminanceSlider} 
                             >
                                 <StyledLink to={{
                                     pathname: `/shades/${color.colorName}`,
                                     state: {
-                                        color: color.color
+                                        color: color.shades
                                     }
-                                }}>More</StyledLink>
+                                }}
+                                color={color.shades[this.state.luminanceSlider]}>
+                                    More
+                                </StyledLink>
                             </CopyColorBox>
                         </GridItem>);  
         } else {

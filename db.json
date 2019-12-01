@@ -3,1220 +3,329 @@
     {
       "colors": [
         {
-          "colorName": "black",
-          "color": "#000000"
-        },
-        {
-          "colorName": "zaa",
-          "color": "#4a4a4a"
-        },
-        {
-          "colorName": "asdasa",
-          "color": "#0d617c"
-        },
-        {
-          "colorName": "grey",
-          "color": "#9b9b9b"
-        },
-        {
-          "colorName": "ff",
-          "color": "#9013fe"
-        },
-        {
-          "colorName": "cyan",
-          "color": "#50e3c2"
-        },
-        {
-          "colorName": " b",
-          "color": "#00ffc6"
-        },
-        {
-          "colorName": "qq",
-          "color": "#bd10e0"
-        },
-        {
-          "colorName": "vvv",
-          "color": "#417505"
-        },
-        {
-          "colorName": "qwe",
-          "color": "#468601"
-        },
-        {
-          "colorName": "qqw",
-          "color": "#7ed321"
-        },
-        {
-          "colorName": "green",
-          "color": "#b8e986"
-        },
-        {
-          "colorName": "asd",
-          "color": "#775f37"
-        },
-        {
-          "colorName": "asda",
-          "color": "#6b3037"
-        },
-        {
-          "colorName": "aaaaaaa",
-          "color": "#ad5e1d"
-        },
-        {
-          "colorName": "aaa",
-          "color": "#f5a623"
-        },
-        {
-          "colorName": "asdas",
-          "color": "#f8e71c"
-        },
-        {
-          "colorName": "pink",
-          "color": "#db828d"
-        },
-        {
-          "colorName": "red",
-          "color": "#d0021b"
-        },
-        {
-          "colorName": "white",
-          "color": "#ffffff"
-        }
-      ],
-      "name": "Minha paleta",
-      "icon": ":flag-ar:",
-      "id": "Uc3SugJ"
-    },
-    {
-      "colors": [
-        {
-          "colorName": "asd",
-          "color": "#f8e71c"
-        },
-        {
-          "colorName": "qqq",
-          "color": "#8b572a"
-        },
-        {
-          "colorName": "as",
-          "color": "#7ed321"
-        },
-        {
-          "colorName": "s",
-          "color": "#bd10e0"
-        },
-        {
-          "colorName": "d",
-          "color": "#c0b214"
-        },
-        {
-          "colorName": "f",
-          "color": "#d9d068"
-        },
-        {
-          "colorName": "z",
-          "color": "#958b13"
-        },
-        {
-          "colorName": "x",
-          "color": "#a6a377"
-        },
-        {
-          "colorName": "c",
-          "color": "#afa85c"
-        },
-        {
-          "colorName": "v",
-          "color": "#6b662f"
+          "colorName": "a",
+          "color": "#fd4b38",
+          "shades": {
+            "50": "#ffdedb",
+            "100": "#febeb7",
+            "200": "#fe9d92",
+            "300": "#fe7c6e",
+            "400": "#fd5b4a",
+            "500": "#e64433",
+            "600": "#b83729",
+            "700": "#8a291f",
+            "800": "#5c1b14",
+            "900": "#2e0e0a"
+          }
         },
         {
           "colorName": "b",
-          "color": "#58541f"
+          "color": "#971610",
+          "shades": {
+            "50": "#ecd5d4",
+            "100": "#d9aaa8",
+            "200": "#c6807d",
+            "300": "#b35651",
+            "400": "#a02b26",
+            "500": "#89140f",
+            "600": "#6e100c",
+            "700": "#520c09",
+            "800": "#370806",
+            "900": "#1b0403"
+          }
+        },
+        {
+          "colorName": "c",
+          "color": "#41465b",
+          "shades": {
+            "50": "#dcdde1",
+            "100": "#babcc3",
+            "200": "#979aa6",
+            "300": "#757888",
+            "400": "#52576a",
+            "500": "#3b4053",
+            "600": "#2f3342",
+            "700": "#232632",
+            "800": "#181921",
+            "900": "#0c0d11"
+          }
+        },
+        {
+          "colorName": "d",
+          "color": "#fd5a60",
+          "shades": {
+            "50": "#ffe1e2",
+            "100": "#fec3c5",
+            "200": "#fea5a8",
+            "300": "#fe878b",
+            "400": "#fd696e",
+            "500": "#e65257",
+            "600": "#b84146",
+            "700": "#8a3134",
+            "800": "#5c2123",
+            "900": "#2e1011"
+          }
+        },
+        {
+          "colorName": "e",
+          "color": "#d3c721",
+          "shades": {
+            "50": "#f7f5d7",
+            "100": "#efebae",
+            "200": "#e7e086",
+            "300": "#dfd65e",
+            "400": "#d7cc35",
+            "500": "#c0b51e",
+            "600": "#999118",
+            "700": "#736d12",
+            "800": "#4d480c",
+            "900": "#262406"
+          }
+        },
+        {
+          "colorName": "f",
+          "color": "#4607cc",
+          "shades": {
+            "50": "#ddd2f6",
+            "100": "#bca5ec",
+            "200": "#9a78e3",
+            "300": "#784bda",
+            "400": "#571ed1",
+            "500": "#4006b9",
+            "600": "#330594",
+            "700": "#26046f",
+            "800": "#19034a",
+            "900": "#0d0125"
+          }
+        },
+        {
+          "colorName": "g",
+          "color": "#7cd94d",
+          "shades": {
+            "50": "#e7f8df",
+            "100": "#cff1be",
+            "200": "#b8ea9e",
+            "300": "#a0e37e",
+            "400": "#88dc5d",
+            "500": "#71c546",
+            "600": "#5a9e38",
+            "700": "#44762a",
+            "800": "#2d4f1c",
+            "900": "#17270e"
+          }
+        },
+        {
+          "colorName": "h",
+          "color": "#03a5e3",
+          "shades": {
+            "50": "#d1effa",
+            "100": "#a3def5",
+            "200": "#76cef0",
+            "300": "#48beeb",
+            "400": "#1aade6",
+            "500": "#0396ce",
+            "600": "#0278a5",
+            "700": "#025a7c",
+            "800": "#013c53",
+            "900": "#011e29"
+          }
+        },
+        {
+          "colorName": "i",
+          "color": "#745eee",
+          "shades": {
+            "50": "#e6e2fc",
+            "100": "#ccc4f9",
+            "200": "#b3a7f6",
+            "300": "#9a8af3",
+            "400": "#816df0",
+            "500": "#6955d8",
+            "600": "#5444ad",
+            "700": "#3f3382",
+            "800": "#2a2257",
+            "900": "#15112b"
+          }
+        },
+        {
+          "colorName": "j",
+          "color": "#7c3fa8",
+          "shades": {
+            "50": "#e7dcef",
+            "100": "#cfb9df",
+            "200": "#b896d0",
+            "300": "#a073c0",
+            "400": "#8850b0",
+            "500": "#713999",
+            "600": "#5a2e7a",
+            "700": "#44225c",
+            "800": "#2d173d",
+            "900": "#170b1f"
+          }
+        },
+        {
+          "colorName": "k",
+          "color": "#38baa7",
+          "shades": {
+            "50": "#dbf2ef",
+            "100": "#b7e6df",
+            "200": "#92d9cf",
+            "300": "#6ecdbf",
+            "400": "#4ac0af",
+            "500": "#33a998",
+            "600": "#298779",
+            "700": "#1f655b",
+            "800": "#14443d",
+            "900": "#0a221e"
+          }
+        },
+        {
+          "colorName": "l",
+          "color": "#985943",
+          "shades": {
+            "50": "#ece1dd",
+            "100": "#dac3bb",
+            "200": "#c7a498",
+            "300": "#b48676",
+            "400": "#a16854",
+            "500": "#8a513d",
+            "600": "#6f4131",
+            "700": "#533125",
+            "800": "#372018",
+            "900": "#1c100c"
+          }
+        },
+        {
+          "colorName": "m",
+          "color": "#fd2425",
+          "shades": {
+            "50": "#ffd7d7",
+            "100": "#feafb0",
+            "200": "#fe8888",
+            "300": "#fe6060",
+            "400": "#fd3839",
+            "500": "#e62122",
+            "600": "#b81a1b",
+            "700": "#8a1414",
+            "800": "#5c0d0d",
+            "900": "#2e0707"
+          }
         },
         {
           "colorName": "n",
-          "color": "#eeebc6"
-        },
-        {
-          "colorName": "m",
-          "color": "#c3b942"
-        },
-        {
-          "colorName": "q",
-          "color": "#beb11a"
-        },
-        {
-          "colorName": "w",
-          "color": "#d4c517"
-        },
-        {
-          "colorName": "e",
-          "color": "#817921"
-        },
-        {
-          "colorName": "r",
-          "color": "#d9cf59"
-        },
-        {
-          "colorName": "t",
-          "color": "#887f12"
-        },
-        {
-          "colorName": "y",
-          "color": "#a1960e"
-        },
-        {
-          "colorName": "u",
-          "color": "#d9d496"
-        }
-      ],
-      "name": "teste2",
-      "icon": ":+1:",
-      "id": "WfRjcME"
-    },
-    {
-      "colors": [
-        {
-          "colorName": "a",
-          "color": "#8b572a"
-        },
-        {
-          "colorName": "b",
-          "color": "#7ed321"
-        },
-        {
-          "colorName": "c",
-          "color": "#bd10e0"
-        },
-        {
-          "colorName": "d",
-          "color": "#7d1e90"
-        },
-        {
-          "colorName": "e",
-          "color": "#50e3c2"
-        },
-        {
-          "colorName": "h",
-          "color": "#079777"
-        },
-        {
-          "colorName": "f",
-          "color": "#22b493"
-        },
-        {
-          "colorName": "j",
-          "color": "#08a481"
-        },
-        {
-          "colorName": "k",
-          "color": "#47ffd5"
-        },
-        {
-          "colorName": "l",
-          "color": "#63b2a0"
-        },
-        {
-          "colorName": "ç",
-          "color": "#7cead1"
-        },
-        {
-          "colorName": "~",
-          "color": "#74b0a3"
-        },
-        {
-          "colorName": "]",
-          "color": "#b7f4e6"
-        },
-        {
-          "colorName": "\\",
-          "color": "#27a689"
-        },
-        {
-          "colorName": "z",
-          "color": "#87b4aa"
-        },
-        {
-          "colorName": "x",
-          "color": "#038b6c"
-        },
-        {
-          "colorName": "v",
-          "color": "#348875"
-        },
-        {
-          "colorName": "n",
-          "color": "#46cdaf"
-        },
-        {
-          "colorName": "m",
-          "color": "#a7f3e2"
-        },
-        {
-          "colorName": "w",
-          "color": "#9ef1de"
-        }
-      ],
-      "name": "teste5",
-      "icon": ":older_adult:",
-      "id": "UYUw-F8"
-    },
-    {
-      "colors": [
-        {
-          "colorName": "q",
-          "color": "#783737"
-        },
-        {
-          "colorName": "w",
-          "color": "#9a3d3d"
-        },
-        {
-          "colorName": "e",
-          "color": "#883c3c"
-        },
-        {
-          "colorName": "r",
-          "color": "#000"
-        },
-        {
-          "colorName": "t",
-          "color": "#974747"
-        },
-        {
-          "colorName": "y",
-          "color": "#ab2f2f"
-        },
-        {
-          "colorName": "u",
-          "color": "#f46767"
-        },
-        {
-          "colorName": "i",
-          "color": "#db9595"
+          "color": "#30ca94",
+          "shades": {
+            "50": "#d9f5ec",
+            "100": "#b4ecd8",
+            "200": "#8ee2c5",
+            "300": "#68d8b1",
+            "400": "#43cf9e",
+            "500": "#2cb887",
+            "600": "#23936c",
+            "700": "#1a6e51",
+            "800": "#114936",
+            "900": "#09251b"
+          }
         },
         {
           "colorName": "o",
-          "color": "#ff6363"
+          "color": "#71bacb",
+          "shades": {
+            "50": "#e5f2f6",
+            "100": "#cbe6ec",
+            "200": "#b2d9e3",
+            "300": "#98cdd9",
+            "400": "#7ec0d0",
+            "500": "#67a9b9",
+            "600": "#528794",
+            "700": "#3e656f",
+            "800": "#29444a",
+            "900": "#152225"
+          }
         },
         {
           "colorName": "p",
-          "color": "#a80606"
-        },
-        {
-          "colorName": "a",
-          "color": "#d29b9b"
-        },
-        {
-          "colorName": "s",
-          "color": "#d66161"
-        },
-        {
-          "colorName": "d",
-          "color": "#750505"
-        },
-        {
-          "colorName": "f",
-          "color": "#ffa8a8"
-        },
-        {
-          "colorName": "g",
-          "color": "#c13232"
-        },
-        {
-          "colorName": "h",
-          "color": "#e30b0b"
-        },
-        {
-          "colorName": "j",
-          "color": "#c55f5f"
-        },
-        {
-          "colorName": "k",
-          "color": "#ff9696"
-        },
-        {
-          "colorName": "l",
-          "color": "#ca4444"
-        },
-        {
-          "colorName": "z",
-          "color": "#fdd7d7"
-        }
-      ],
-      "name": "agora vai",
-      "icon": ":flag-ba:",
-      "id": "Uy9bQFA"
-    },
-    {
-      "colors": [
-        {
-          "colorName": "s",
-          "color": "#7ed321"
+          "color": "#faa60a",
+          "shades": {
+            "50": "#feefd2",
+            "100": "#fddfa6",
+            "200": "#fcce79",
+            "300": "#fbbe4d",
+            "400": "#faae20",
+            "500": "#e39709",
+            "600": "#b67907",
+            "700": "#885b05",
+            "800": "#5b3c04",
+            "900": "#2d1e02"
+          }
         },
         {
           "colorName": "q",
-          "color": "#bd10e0"
+          "color": "#0236c8",
+          "shades": {
+            "50": "#d1daf5",
+            "100": "#a3b6eb",
+            "200": "#7591e1",
+            "300": "#476dd7",
+            "400": "#1948cd",
+            "500": "#0231b6",
+            "600": "#012791",
+            "700": "#011d6d",
+            "800": "#011449",
+            "900": "#000a24"
+          }
         },
         {
-          "colorName": "e",
-          "color": "#e97cff"
-        },
-        {
-          "colorName": "r",
-          "color": "#673071"
+          "colorName": "s",
+          "color": "#8b0b15",
+          "shades": {
+            "50": "#ead3d4",
+            "100": "#d5a6aa",
+            "200": "#c07a7f",
+            "300": "#ab4e55",
+            "400": "#96212a",
+            "500": "#7e0a13",
+            "600": "#65080f",
+            "700": "#4c060b",
+            "800": "#330408",
+            "900": "#190204"
+          }
         },
         {
           "colorName": "t",
-          "color": "#832895"
-        },
-        {
-          "colorName": "y",
-          "color": "#52195d"
+          "color": "#2a14ab",
+          "shades": {
+            "50": "#d8d4f0",
+            "100": "#b2aae0",
+            "200": "#8b7fd1",
+            "300": "#6454c2",
+            "400": "#3d29b3",
+            "500": "#26129b",
+            "600": "#1f0f7c",
+            "700": "#170b5d",
+            "800": "#0f073e",
+            "900": "#08041f"
+          }
         },
         {
           "colorName": "u",
-          "color": "#380742"
-        },
-        {
-          "colorName": "i",
-          "color": "#e8a9f4"
-        },
-        {
-          "colorName": "o",
-          "color": "#b761c8"
-        },
-        {
-          "colorName": "p",
-          "color": "#9d12b9"
-        },
-        {
-          "colorName": "a",
-          "color": "#4b1a55"
-        },
-        {
-          "colorName": "d",
-          "color": "#642371"
-        },
-        {
-          "colorName": "f",
-          "color": "#b760ca"
-        },
-        {
-          "colorName": "g",
-          "color": "#c787d4"
-        },
-        {
-          "colorName": "h",
-          "color": "#811997"
-        },
-        {
-          "colorName": "j",
-          "color": "#d5a9de"
-        },
-        {
-          "colorName": "k",
-          "color": "#341839"
-        },
-        {
-          "colorName": "l",
-          "color": "#d697e3"
-        },
-        {
-          "colorName": "z",
-          "color": "#f2e8f4"
-        },
-        {
-          "colorName": "x",
-          "color": "#450353"
+          "color": "#3f171d",
+          "shades": {
+            "50": "#dcd5d6",
+            "100": "#b9abad",
+            "200": "#968084",
+            "300": "#73565b",
+            "400": "#502c32",
+            "500": "#39151a",
+            "600": "#2e1115",
+            "700": "#220d10",
+            "800": "#17080b",
+            "900": "#0b0405"
+          }
         }
       ],
-      "name": "rwsre1",
-      "icon": ":flag-ba:",
-      "id": "Nx55HDY"
-    },
-    {
-      "colors": [
-        {
-          "colorName": "q",
-          "color": "#f5a623"
-        },
-        {
-          "colorName": "w",
-          "color": "#d68c11"
-        },
-        {
-          "colorName": "e",
-          "color": "#fda617"
-        },
-        {
-          "colorName": "r",
-          "color": "#734d0d"
-        },
-        {
-          "colorName": "t",
-          "color": "#b49560"
-        },
-        {
-          "colorName": "y",
-          "color": "#e2c89e"
-        },
-        {
-          "colorName": "u",
-          "color": "#996206"
-        },
-        {
-          "colorName": "i",
-          "color": "#bc7c0f"
-        },
-        {
-          "colorName": "o",
-          "color": "#deceb3"
-        },
-        {
-          "colorName": "p",
-          "color": "#f3b753"
-        },
-        {
-          "colorName": "a",
-          "color": "#7a6849"
-        },
-        {
-          "colorName": "s",
-          "color": "#735c36"
-        },
-        {
-          "colorName": "d",
-          "color": "#624b22"
-        },
-        {
-          "colorName": "f",
-          "color": "#583f15"
-        },
-        {
-          "colorName": "g",
-          "color": "#62430d"
-        },
-        {
-          "colorName": "h",
-          "color": "#5b3b04"
-        },
-        {
-          "colorName": "j",
-          "color": "#774d04"
-        },
-        {
-          "colorName": "k",
-          "color": "#b47508"
-        },
-        {
-          "colorName": "l",
-          "color": "#dd8f08"
-        },
-        {
-          "colorName": "z",
-          "color": "#f39b04"
-        }
-      ],
-      "name": "foi",
-      "icon": ":flag-bj:",
-      "id": "PVzix3k"
-    },
-    {
-      "colors": [
-        {
-          "colorName": "a",
-          "color": "#a62a2a"
-        },
-        {
-          "colorName": "b",
-          "color": "#c38e8e"
-        },
-        {
-          "colorName": "c",
-          "color": "#ab4949"
-        },
-        {
-          "colorName": "d",
-          "color": "#662121"
-        },
-        {
-          "colorName": "e",
-          "color": "#f15c5c"
-        },
-        {
-          "colorName": "f",
-          "color": "#ff1d1d"
-        },
-        {
-          "colorName": "g",
-          "color": "#7a1a1a"
-        },
-        {
-          "colorName": "h",
-          "color": "#510606"
-        },
-        {
-          "colorName": "i",
-          "color": "#a87c7c"
-        },
-        {
-          "colorName": "j",
-          "color": "#7d1c1c"
-        },
-        {
-          "colorName": "k",
-          "color": "#f6b1b1"
-        },
-        {
-          "colorName": "l",
-          "color": "#970707"
-        },
-        {
-          "colorName": "m",
-          "color": "#ec3939"
-        },
-        {
-          "colorName": "n",
-          "color": "#000"
-        },
-        {
-          "colorName": "o",
-          "color": "#862121"
-        },
-        {
-          "colorName": "p",
-          "color": "#8e1717"
-        },
-        {
-          "colorName": "q",
-          "color": "#c68585"
-        },
-        {
-          "colorName": "r",
-          "color": "#fd7979"
-        },
-        {
-          "colorName": "s",
-          "color": "#aa3b3b"
-        },
-        {
-          "colorName": "t",
-          "color": "#e71919"
-        }
-      ],
-      "name": "aaa",
-      "icon": ":male-judge:",
-      "id": "EKl5F4P"
-    },
-    {
-      "colors": [
-        {
-          "colorName": "q",
-          "color": "#7ed321"
-        },
-        {
-          "colorName": "w",
-          "color": "#68b513"
-        },
-        {
-          "colorName": "e",
-          "color": "#498805"
-        },
-        {
-          "colorName": "r",
-          "color": "#c3f38f"
-        },
-        {
-          "colorName": "t",
-          "color": "#61a11b"
-        },
-        {
-          "colorName": "y",
-          "color": "#66a126"
-        },
-        {
-          "colorName": "u",
-          "color": "#4f7328"
-        },
-        {
-          "colorName": "i",
-          "color": "#3a5d14"
-        },
-        {
-          "colorName": "o",
-          "color": "#1a2f03"
-        },
-        {
-          "colorName": "p",
-          "color": "#79dd0c"
-        },
-        {
-          "colorName": "a",
-          "color": "#96db4c"
-        },
-        {
-          "colorName": "s",
-          "color": "#4c7c19"
-        },
-        {
-          "colorName": "d",
-          "color": "#27400c"
-        },
-        {
-          "colorName": "f",
-          "color": "#172803"
-        },
-        {
-          "colorName": "g",
-          "color": "#0f1905"
-        },
-        {
-          "colorName": "h",
-          "color": "#132005"
-        },
-        {
-          "colorName": "j",
-          "color": "#445135"
-        },
-        {
-          "colorName": "k",
-          "color": "#3d5126"
-        },
-        {
-          "colorName": "l",
-          "color": "#2a381b"
-        },
-        {
-          "colorName": "z",
-          "color": "#20310f"
-        }
-      ],
-      "name": "ddd",
-      "icon": ":see_no_evil:",
-      "id": "4lesNz6"
-    },
-    {
-      "colors": [
-        {
-          "colorName": "h",
-          "color": "#844510"
-        },
-        {
-          "colorName": "s",
-          "color": "#000"
-        },
-        {
-          "colorName": "q",
-          "color": "#9c5b23"
-        },
-        {
-          "colorName": "w",
-          "color": "#7a4010"
-        },
-        {
-          "colorName": "e",
-          "color": "#d16a15"
-        },
-        {
-          "colorName": "r",
-          "color": "#c58755"
-        },
-        {
-          "colorName": "t",
-          "color": "#f8aa69"
-        },
-        {
-          "colorName": "y",
-          "color": "#d28443"
-        },
-        {
-          "colorName": "u",
-          "color": "#e3c9b4"
-        },
-        {
-          "colorName": "i",
-          "color": "#ffbb83"
-        },
-        {
-          "colorName": "o",
-          "color": "#fb821e"
-        },
-        {
-          "colorName": "p",
-          "color": "#fba65f"
-        },
-        {
-          "colorName": "d",
-          "color": "#eeba8f"
-        },
-        {
-          "colorName": "f",
-          "color": "#e0a87a"
-        },
-        {
-          "colorName": "g",
-          "color": "#3d2512"
-        },
-        {
-          "colorName": "j",
-          "color": "#cd905d"
-        },
-        {
-          "colorName": "k",
-          "color": "#dd7a29"
-        },
-        {
-          "colorName": "l",
-          "color": "#ad5811"
-        },
-        {
-          "colorName": "z",
-          "color": "#f3caa7"
-        },
-        {
-          "colorName": "a",
-          "color": "#8b572a"
-        }
-      ],
-      "name": "asdfg",
-      "icon": ":unamused:",
-      "id": "tH9RLNB"
-    },
-    {
-      "colors": [
-        {
-          "colorName": "a",
-          "color": "#490a0a"
-        },
-        {
-          "colorName": "b",
-          "color": "#417505"
-        },
-        {
-          "colorName": "q",
-          "color": "#f8e71c"
-        },
-        {
-          "colorName": "w",
-          "color": "#5c9a14"
-        },
-        {
-          "colorName": "e",
-          "color": "#3e6c09"
-        },
-        {
-          "colorName": "r",
-          "color": "#89db2b"
-        },
-        {
-          "colorName": "t",
-          "color": "#a5e25f"
-        },
-        {
-          "colorName": "y",
-          "color": "#738e53"
-        },
-        {
-          "colorName": "u",
-          "color": "#c8f98f"
-        },
-        {
-          "colorName": "i",
-          "color": "#547331"
-        },
-        {
-          "colorName": "o",
-          "color": "#4a7f0c"
-        },
-        {
-          "colorName": "p",
-          "color": "#000"
-        },
-        {
-          "colorName": "s",
-          "color": "#6a844b"
-        },
-        {
-          "colorName": "d",
-          "color": "#83ab56"
-        },
-        {
-          "colorName": "f",
-          "color": "#49701d"
-        },
-        {
-          "colorName": "g",
-          "color": "#498408"
-        },
-        {
-          "colorName": "h",
-          "color": "#31451b"
-        },
-        {
-          "colorName": "j",
-          "color": "#bae886"
-        },
-        {
-          "colorName": "k",
-          "color": "#98e544"
-        },
-        {
-          "colorName": "l",
-          "color": "#192d02"
-        }
-      ],
-      "name": "aehooo",
-      "icon": ":rolling_on_the_floor_laughing:",
-      "id": "ds8PkeC"
-    },
-    {
-      "colors": [
-        {
-          "colorName": "a",
-          "color": "#8b572a"
-        },
-        {
-          "colorName": "q",
-          "color": "#a8774c"
-        },
-        {
-          "colorName": "w",
-          "color": "#b26f35"
-        },
-        {
-          "colorName": "e",
-          "color": "#b26c30"
-        },
-        {
-          "colorName": "t",
-          "color": "#3d2613"
-        },
-        {
-          "colorName": "y",
-          "color": "#2a1605"
-        },
-        {
-          "colorName": "u",
-          "color": "#c58752"
-        },
-        {
-          "colorName": "o",
-          "color": "#eecbad"
-        },
-        {
-          "colorName": "p",
-          "color": "#7c5431"
-        },
-        {
-          "colorName": "s",
-          "color": "#ee9344"
-        },
-        {
-          "colorName": "d",
-          "color": "#eca363"
-        },
-        {
-          "colorName": "f",
-          "color": "#9c581d"
-        },
-        {
-          "colorName": "g",
-          "color": "#995215"
-        },
-        {
-          "colorName": "h",
-          "color": "#62350d"
-        },
-        {
-          "colorName": "j",
-          "color": "#733805"
-        },
-        {
-          "colorName": "k",
-          "color": "#e39e62"
-        },
-        {
-          "colorName": "l",
-          "color": "#de6c09"
-        },
-        {
-          "colorName": "z",
-          "color": "#e8b486"
-        },
-        {
-          "colorName": "x",
-          "color": "#d19058"
-        },
-        {
-          "colorName": "c",
-          "color": "#925928"
-        }
-      ],
-      "name": "a",
-      "icon": ":alien:",
-      "id": "EihsrsP"
-    },
-    {
-      "colors": [
-        {
-          "colorName": "q",
-          "color": "#7c2d2d"
-        },
-        {
-          "colorName": "w",
-          "color": "#bc0b0b"
-        },
-        {
-          "colorName": "e",
-          "color": "#933f3f"
-        },
-        {
-          "colorName": "r",
-          "color": "#fd6f6f"
-        },
-        {
-          "colorName": "t",
-          "color": "#4a1616"
-        },
-        {
-          "colorName": "y",
-          "color": "#d98989"
-        },
-        {
-          "colorName": "u",
-          "color": "#d94b4b"
-        },
-        {
-          "colorName": "i",
-          "color": "#b20606"
-        },
-        {
-          "colorName": "o",
-          "color": "#c52929"
-        },
-        {
-          "colorName": "p",
-          "color": "#e04141"
-        },
-        {
-          "colorName": "a",
-          "color": "#ea9696"
-        },
-        {
-          "colorName": "s",
-          "color": "#893e3e"
-        },
-        {
-          "colorName": "d",
-          "color": "#6c3030"
-        },
-        {
-          "colorName": "f",
-          "color": "#7c1b1b"
-        },
-        {
-          "colorName": "g",
-          "color": "#781c1c"
-        },
-        {
-          "colorName": "h",
-          "color": "#331b1b"
-        },
-        {
-          "colorName": "j",
-          "color": "#160303"
-        },
-        {
-          "colorName": "k",
-          "color": "#901b1b"
-        },
-        {
-          "colorName": "l",
-          "color": "#c83a3a"
-        },
-        {
-          "colorName": "ç",
-          "color": "#000"
-        }
-      ],
-      "name": "essa é nova",
-      "icon": ":tiger:",
-      "id": "pkUWOOd"
-    },
-    {
-      "colors": [
-        {
-          "colorName": "q",
-          "color": "#db7217"
-        },
-        {
-          "colorName": "w",
-          "color": "#ea7815"
-        },
-        {
-          "colorName": "e",
-          "color": "#f68e34"
-        },
-        {
-          "colorName": "r",
-          "color": "#f19342"
-        },
-        {
-          "colorName": "t",
-          "color": "#fba050"
-        },
-        {
-          "colorName": "y",
-          "color": "#de9f68"
-        },
-        {
-          "colorName": "u",
-          "color": "#ecae78"
-        },
-        {
-          "colorName": "i",
-          "color": "#f3b279"
-        },
-        {
-          "colorName": "o",
-          "color": "#d19058"
-        },
-        {
-          "colorName": "p",
-          "color": "#cc5f01"
-        },
-        {
-          "colorName": "a",
-          "color": "#db6802"
-        },
-        {
-          "colorName": "s",
-          "color": "#994a05"
-        },
-        {
-          "colorName": "d",
-          "color": "#733701"
-        },
-        {
-          "colorName": "f",
-          "color": "#f97602"
-        },
-        {
-          "colorName": "g",
-          "color": "#9e4a01"
-        },
-        {
-          "colorName": "h",
-          "color": "#6b3201"
-        },
-        {
-          "colorName": "j",
-          "color": "#492302"
-        },
-        {
-          "colorName": "k",
-          "color": "#231101"
-        },
-        {
-          "colorName": "l",
-          "color": "#402d1c"
-        },
-        {
-          "colorName": "m",
-          "color": "#40250e"
-        }
-      ],
-      "name": "50 tons de laranja",
-      "icon": ":flag-bw:",
-      "id": "a2bJivF"
-    },
-    {
-      "colors": [
-        {
-          "colorName": "a",
-          "color": "#379893"
-        },
-        {
-          "colorName": "q",
-          "color": "#74d299"
-        },
-        {
-          "colorName": "w",
-          "color": "#49c01c"
-        },
-        {
-          "colorName": "e",
-          "color": "#04bb86"
-        },
-        {
-          "colorName": "r",
-          "color": "#ee821b"
-        },
-        {
-          "colorName": "t",
-          "color": "#974de1"
-        },
-        {
-          "colorName": "y",
-          "color": "#92fa67"
-        },
-        {
-          "colorName": "u",
-          "color": "#56bd8f"
-        },
-        {
-          "colorName": "i",
-          "color": "#6128f5"
-        },
-        {
-          "colorName": "o",
-          "color": "#cdf2ba"
-        },
-        {
-          "colorName": "p",
-          "color": "#b95f8f"
-        },
-        {
-          "colorName": "s",
-          "color": "#4ff683"
-        },
-        {
-          "colorName": "d",
-          "color": "#9fc537"
-        },
-        {
-          "colorName": "f",
-          "color": "#ceda1a"
-        },
-        {
-          "colorName": "g",
-          "color": "#08cc6a"
-        },
-        {
-          "colorName": "h",
-          "color": "#dbfa1a"
-        },
-        {
-          "colorName": "j",
-          "color": "#e4a5a8"
-        },
-        {
-          "colorName": "k",
-          "color": "#a0c485"
-        },
-        {
-          "colorName": "l",
-          "color": "#2c0a87"
-        },
-        {
-          "colorName": "ç",
-          "color": "#a6c8c0"
-        }
-      ],
-      "name": "random colors",
-      "icon": ":eyeglasses:",
-      "id": "3gd6NaU"
+      "name": "ssdf",
+      "icon": ":smile:",
+      "id": "sJKdilZ"
     }
   ]
 }

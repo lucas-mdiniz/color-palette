@@ -16,7 +16,7 @@ const PaletteIcon = styled.i`
 const PaletteName = styled.span`
     display: block;
     margin-top: 10px;
-    color: #3c40c6;
+    color: #333;
 `;
 
 const PaletteDescription = styled.div`

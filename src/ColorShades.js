@@ -3,7 +3,6 @@ import { withRouter } from "react-router";
 import CopyColorBox from './CopyColorBox';
 import PaletteHeader from './PaletteHeader';
 import styled from 'styled-components';
-import {generateColorShades} from './Helper';
 import PaletteContainer from './PaletteContainer';
 import {GridItem} from './GridSystem';
 import {colorFormat} from './Helper';
@@ -31,16 +30,15 @@ class ColorShades extends Component{
 
 
     render(){
-        const color = this.props.location.state.color;
+        const colors = this.props.location.state.color;
         const colorName = this.props.urlParams.match.params.color;
-
         return(
             <PaletteWrapper>
-                <PaletteHeader colorFormat={this.handleFormat}/>
+                <PaletteHeader colorFormat={this.handleFormat} backButton/>
                 <PaletteContainer>
-                    {generateColorShades(color).map(color => 
-                        <GridItem cols={5} rows={2}>
-                            <CopyColorBox color={colorFormat(color, this.state.colorFormat)} colorName={colorName}/>
+                    {Object.keys(colors).map(color => 
+                        <GridItem key={`${colorName} ${color}`} cols={5} rows={2}>
+                            <CopyColorBox color={colorFormat(colors[color], this.state.colorFormat)} name={`${colorName} ${color}`}/>
                         </GridItem>
                     )}
                 </PaletteContainer>

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
-
+import chroma from 'chroma-js';
 
 const StyledCreateColorBox = styled.div`
     background: ${props => (props.color)};
@@ -16,11 +16,13 @@ const StyledCreateColorBox = styled.div`
 const ColorName = styled.p`
     padding: 10px;
     margin: 0;
+    color: ${props => chroma(props.color).luminance() > 0.4 ? '#000' : '#fff'};
 `;
 
 const DeleteIcon = styled(FontAwesomeIcon)`
     padding: 10px;
     cursor: pointer;
+    color: ${props => chroma(props.color).luminance() > 0.4 ? '#000' : '#fff'};
 `;
 
 class CreateColorBox extends Component{
@@ -37,8 +39,12 @@ class CreateColorBox extends Component{
     render(){
         return(
             <StyledCreateColorBox color={this.props.color}>
-                <ColorName>{this.props.name}</ColorName>
-                <DeleteIcon icon={faTrash} onClick={this.handleClick}/>
+                <ColorName color={this.props.color}>{this.props.name}</ColorName>
+                <DeleteIcon 
+                    icon={faTrash} 
+                    onClick={this.handleClick}
+                    color={this.props.color}
+                />
             </StyledCreateColorBox>
         )
     }

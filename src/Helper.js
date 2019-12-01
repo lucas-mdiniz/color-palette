@@ -6,8 +6,22 @@ function generateColorShades(color){
     
     array.pop();
     array.shift();
+    
 
-    return array;
+    let shades = {};
+
+    array.forEach((color, index) => {
+        
+        let key = index*100;
+
+        if(index === 0){
+            shades[50] = color;
+        } else {
+            shades[key] = color;
+        }
+    });
+
+    return shades;
 }
 
 function colorFormat(oldColor, format){

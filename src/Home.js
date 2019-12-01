@@ -9,7 +9,6 @@ const StyledApp = styled.div`
   max-width: 1170px;
   padding: 0 50px;
   margin: 50px auto;
-  background: url(bg.png);
 `;
 
 const CreatePaletteBtn = styled.div`
@@ -24,7 +23,8 @@ const CreatePaletteBtn = styled.div`
     display: inline-block;
 
     &:hover{
-      background: #2e32a2;
+      background: #fff;
+      color: #333;
     }
   }
 `

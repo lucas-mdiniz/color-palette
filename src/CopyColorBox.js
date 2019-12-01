@@ -2,18 +2,24 @@ import React, {Component} from 'react';
 import ColorBox from './ColorBox';
 import styled from 'styled-components';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
+import chroma from 'chroma-js';
 
-const BoxOverlay = styled.div`
-    background: ${props => props.colorOverlay};
+const BoxOverlay =    
+    styled.div.attrs(props => ({
+        style: {
+            background: props.colorOverlay,
+            opacity: (props.colorCopied ? '1' : '0'),
+            zIndex: props.colorCopied ? '10' : '-1'
+        },
+    }))`
+    
     height: 100%;
     transition: all 300ms;
     position: fixed;
-    opacity: ${props => (props.colorCopied ? '1' : '0')};
     height: 100vh;
     width: 100vw;
     top: 0;
     left: 0;
-    z-index: ${props => (props.colorCopied ? '10' : '-1')};
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -34,9 +40,14 @@ const CopiedSign = styled.p`
 `;
 
 
-const CopyButton = styled.button`
-    color: #fff;
-    background: rgba(255,255,255,.3);
+const CopyButton =
+    styled.button.attrs(props => ({
+        style: {
+            color: chroma(props.color).luminance() > 0.4 ? '#000' : '#fff',
+            background: chroma(props.color).luminance() > 0.4 ? 'rgba(0,0,0,.3)' : 'rgba(255,255,255,.3)'
+        },
+    }))`
+
     opacity: 0;
     text-transform: uppercase; 
     padding: 7px 20px;
@@ -93,7 +104,7 @@ class CopyColorBox extends Component{
                     >
                         <CopiedSign>Copied!</CopiedSign>
                     </BoxOverlay>
-                    <CopyButton>Copy</CopyButton>
+                    <CopyButton color={this.props.color}>Copy</CopyButton>
                     {this.props.children}
                 </StyledColorBox>
             </CopyToClipboard>
