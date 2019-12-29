@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {useState} from 'react';
 import { Picker, Emoji } from 'emoji-mart';
 import 'emoji-mart/css/emoji-mart.css';
 import styled from 'styled-components';
@@ -11,8 +11,7 @@ const StyledModal = styled(Modal)`
 `;
 
 const ModalWrapper = styled.div`
-    background:
-    #fff;
+    background:#fff;
     min-width: 700px;
     max-width: 90%;
     min-height: 300px;
@@ -29,95 +28,83 @@ const StyledButton = styled(Button)`
     margin-top: 30px;
 `;
 
-class SavePalette extends Component{
-    constructor(){
-        super();
+function SavePalette (props){
 
-        this.state = {
-            next: false,
-            icon: ''
-        }
+    const [next, setNext] = useState(false);
+    const [icon, setIcon] = useState('');
 
-        this.handleChange = this.handleChange.bind(this);
-        this.handleClose = this.handleClose.bind(this);
-        this.handleCreatePalette = this.handleCreatePalette.bind(this);
-        this.handleNext = this.handleNext.bind(this);
-        this.addEmoji = this.addEmoji.bind(this);
-    }
 
-    handleChange(e){
-        this.props.changeField(e);
-    }
+    const handleChange = e  =>  {
+        props.changeField(e);
+    };
     
-    handleClose(){
-        this.props.onClose();
+    const handleClose = () => {
+        props.onClose();
+    };
+
+    const handleCreatePalette = () => {
+        props.createPalette();
+        props.onClose();
+        setNext(false);
+    };
+
+    const handleNext = () => {
+        setNext(true);
+    };
+
+    const addEmoji = emoji => {
+        props.addEmoji(emoji);
+        setIcon(emoji.colons);
+    };
+
+    let modalContent;
+
+    if(next){
+        modalContent = 
+            <ModalWrapper>
+                <TextField
+                    name="paletteName"
+                    label="Palette Name"
+                    onChange = {handleChange}
+                    value={props.paletteName}
+                />
+                <StyledButton
+                    variant="contained" 
+                    color="primary" 
+                    onClick={handleCreatePalette}
+                >
+                        Create Palette
+                </StyledButton>
+            </ModalWrapper>
+        ; 
+    } else {
+        modalContent = 
+            <ModalWrapper>
+                <h2>Choose an emoji for your palette</h2>
+                <Picker set='facebook' onSelect={addEmoji}/>
+                <Emoji emoji={icon} size={32}/>
+                <StyledButton
+                    variant="contained" 
+                    color="primary" 
+                    onClick={handleNext}
+                >
+                    Next
+                </StyledButton>
+            </ModalWrapper>
+        ;
     }
 
-    handleCreatePalette(){
-        this.props.createPalette();
-        this.props.onClose();
-        this.setState({next:false});
-    }
+    return(
 
-    handleNext(){
-        this.setState({next:true});
-    }
-
-    addEmoji(emoji){
-        this.props.addEmoji(emoji);
-        this.setState({ icon: emoji.colons});
-    }
-
-    render(){
-        let modalContent;
-
-        if(this.state.next){
-            modalContent = 
-                <ModalWrapper>
-                    <TextField
-                        name="paletteName"
-                        label="Palette Name"
-                        onChange = {this.handleChange}
-                        value={this.props.paletteName}
-                    />
-                    <StyledButton
-                        variant="contained" 
-                        color="primary" 
-                        onClick={this.handleCreatePalette}
-                    >
-                            Create Palette
-                    </StyledButton>
-                </ModalWrapper>
-            ; 
-        } else {
-            modalContent = 
-                <ModalWrapper>
-                    <h2>Choose an emoji for your palette</h2>
-                    <Picker set='facebook' onSelect={this.addEmoji}/>
-                    <Emoji emoji={this.state.icon} size={32}/>
-                    <StyledButton
-                        variant="contained" 
-                        color="primary" 
-                        onClick={this.handleNext}
-                    >
-                        Next
-                    </StyledButton>
-                </ModalWrapper>
-            ;
-        }
-
-        return(
-
-            <StyledModal
-                aria-labelledby="simple-modal-title"
-                aria-describedby="simple-modal-description"
-                open={this.props.open}
-                onClose={this.handleClose}
-            >   
-                {modalContent}
-            </StyledModal>
-        )
-    }
+        <StyledModal
+            aria-labelledby="simple-modal-title"
+            aria-describedby="simple-modal-description"
+            open={props.open}
+            onClose={handleClose}
+        >   
+            {modalContent}
+        </StyledModal>
+    )
 }
 
 export default SavePalette;

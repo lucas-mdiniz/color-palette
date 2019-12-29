@@ -1,11 +1,13 @@
-import React, {Component} from 'react';
+import React, {useState, useContext} from 'react';
 import CopyColorBox from './CopyColorBox';
 import PaletteHeader from './PaletteHeader';
 import styled from 'styled-components';
 import {GridItem, GridContainer} from './GridSystem';
 import {Link} from 'react-router-dom';
-import {colorFormat} from './Helper';
+import {changeColorFormat} from './Helper';
 import chroma from 'chroma-js';
+import {ColorFormatContext} from './context/ColorFormatContext';
+
 
 const PaletteWrapper = styled.div`
     height: 100vh;
@@ -23,70 +25,53 @@ const StyledLink = styled(Link)`
     padding: 7px 14px;
 `;
 
+function Palette(props){
+    const [colorFormat,] = useContext(ColorFormatContext);
 
-class Palette extends Component{
-    constructor(){
-        super();
+    const [luminanceSlider, setLuminance] = useState(400);
 
-        this.state = {
-            colorFormat: 'hex',
-            luminanceSlider: 400,
-            copied: false
-        }
+    const handleLuminance = luminanceSlider =>{
+        setLuminance(luminanceSlider);
+    };
 
-        this.handleFormat = this.handleFormat.bind(this);
-        this.handleLuminance = this.handleLuminance.bind(this);
+    let paletteRender;
+
+    if(props.palettes.length !== 0){
+        paletteRender = 
+            props.palettes
+                .filter(palette => palette.id === props.urlParams.match.params.id)[0].colors
+                .map(color => 
+                    <GridItem cols={5} rows={4} key={color.colorName}>
+                        <CopyColorBox  
+                            color={changeColorFormat(color.shades[luminanceSlider], colorFormat)} 
+                            name={color.colorName}
+                        >
+                            <StyledLink to={{
+                                pathname: `/shades/${color.colorName}`,
+                                state: {
+                                    color: color.shades
+                                }
+                            }}
+                            color={color.shades[luminanceSlider]}>
+                                More
+                            </StyledLink>
+                        </CopyColorBox>
+                    </GridItem>);  
+    } else {
+        paletteRender = <p>loading</p>
     }
 
-    handleFormat(colorFormat){
-        this.setState({colorFormat});
-    }
-
-    handleLuminance(luminanceSlider){
-        this.setState({luminanceSlider});
-    }
-
-
-    render(){
-        let paletteRender;
-        if(this.props.palettes.length !== 0){
-            paletteRender = 
-                this.props.palettes
-                    .filter(palette => palette.id === this.props.urlParams.match.params.id)[0].colors
-                    .map(color => 
-                        <GridItem cols={5} rows={4} key={color.colorName}>
-                            <CopyColorBox  
-                                color={colorFormat(color.shades[this.state.luminanceSlider], this.state.colorFormat)} 
-                                name={color.colorName}
-                            >
-                                <StyledLink to={{
-                                    pathname: `/shades/${color.colorName}`,
-                                    state: {
-                                        color: color.shades
-                                    }
-                                }}
-                                color={color.shades[this.state.luminanceSlider]}>
-                                    More
-                                </StyledLink>
-                            </CopyColorBox>
-                        </GridItem>);  
-        } else {
-            paletteRender = <p>loading</p>
-        }
-    
-        return(
-            <PaletteWrapper>
-                <PaletteHeader 
-                    colorFormat={this.handleFormat} 
-                    luminanceSlider={this.handleLuminance} 
-                    luminanceOn
-                />
-                <GridContainer>
-                    {paletteRender}
-                </GridContainer>
-            </PaletteWrapper>
-        )
-    }
+    return(
+        <PaletteWrapper>
+            <PaletteHeader 
+                changeLuminanceSlider={handleLuminance} 
+                luminanceOn
+            />
+            <GridContainer>
+                {paletteRender}
+            </GridContainer>
+        </PaletteWrapper>
+    )
 }
 
 export default Palette;

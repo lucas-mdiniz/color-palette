@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import MiniPalette from './MiniPalette';
 import styled from 'styled-components';
 import './App.css';
@@ -33,25 +33,28 @@ const MiniPaletteWrapper = styled(Link)`
   text-decoration: none;
 `;
 
-class Home extends Component {
+function Home(props){
 
-  render(){
-    return (
-      <StyledApp> 
-        <CreatePaletteBtn>
-          <Link to='/create'> Create new palette </Link>
-        </CreatePaletteBtn>
-        <GridContainer gap={10}>
-          {this.props.palettes.map((palette) => 
-            <GridItem cols={3} key={palette.id}>
-                <MiniPaletteWrapper to ={`/palette/${palette.id}`}>
-                  <MiniPalette colors={palette.colors} name={palette.name} icon={palette.icon}/>
-                </MiniPaletteWrapper>
-            </GridItem>)}
-        </GridContainer>
-      </StyledApp>
-    );
+  const deletePalette = (id) => {
+    props.deletePalette(id);
   }
+
+  return (
+    <StyledApp> 
+      <CreatePaletteBtn>
+        <Link to='/create'> Create new palette </Link>
+      </CreatePaletteBtn>
+      <GridContainer gap={10}>
+        {props.palettes.map((palette) => 
+          <GridItem cols={3} key={palette.id}>
+              <MiniPaletteWrapper to ={`/palette/${palette.id}`}>
+                <MiniPalette id={palette.id} deletePalette={deletePalette} colors={palette.colors} name={palette.name} icon={palette.icon}/>
+              </MiniPaletteWrapper>
+          </GridItem>)}
+      </GridContainer>
+    </StyledApp>
+  );
 }
+
 
 export default Home;
