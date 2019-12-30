@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faArrowLeft, faArrowRight} from '@fortawesome/free-solid-svg-icons';
@@ -50,85 +50,76 @@ const AlertError = styled.p`
     color: #f44336;
 `;
 
-class SideBar extends Component{
-    constructor(){
-        super();
+function SideBar (props){
 
-        this.handleChangeColorPicker = this.handleChangeColorPicker.bind(this);
-        this.handleSidebarClose = this.handleSidebarClose.bind(this);
-        this.handleGenerateColor = this.handleGenerateColor.bind(this);
-    }
+    const handleChangeColorPicker = color => {
+        props.colorPicker(color)    
+    };
 
-    handleChangeColorPicker(color) {
-        this.props.colorPicker(color)    
-    }
+    const handleSidebarClose = () => {
+        props.handleClose();
+    };
 
-    handleSidebarClose(){
-        this.props.handleClose();
-    }
-
-    handleGenerateColor(e){
+    const handleGenerateColor = (e) => {
         e.preventDefault();
 
-        this.props.generateColor();
-    }
+        props.generateColor();
+    };
 
-    render(){
-        const nameEmpty = this.props.name === '';
-        const validateColor = this.props.colors.filter((color) => color.colorName === this.props.name || color.color === this.props.color).length !== 0;
-        const limitQuantity =  this.props.colors.length >= 20;
+    const nameEmpty = props.name === '';
+    const validateColor = props.colors.filter((color) => color.colorName === props.name || color.color === props.color).length !== 0;
+    const limitQuantity =  props.colors.length >= 20;
 
-        return(
-            <StyledSidebar open={this.props.sideBarOpen}>
-                <StyledForm>
-                    <Button 
-                        variant="contained" 
-                        color="primary" 
-                        onClick={this.handleGenerateColor}
-                    >
-                            Random Color
-                    </Button>
-                    <StyledSketchPicker
-                        color={ this.props.color}
-                        onChangeComplete={ this.handleChangeColorPicker }
-                        name="colorPicker"
-                    />
-                    <StyledTextField
-                        error = {nameEmpty}
-                        helperText = {nameEmpty && 'The name field is required'}
-                        id="standard-error"
-                        name="colorName"
-                        label="Color name"
-                        onChange = {this.props.colorName}
-                        value={this.props.name}
-                    />
-                    {validateColor &&
-                        <AlertError>
-                            This name or color already exists!
-                        </AlertError    >
-                    }
-                    <Button 
-                        variant="contained" 
-                        color="primary" 
-                        onClick={this.props.submit}
-                        disabled = {nameEmpty || validateColor || limitQuantity}
-                    >
-                            Add Color
-                    </Button>
-                    {limitQuantity &&
-                        <AlertError>
-                            You already have 20 colors!
-                        </AlertError    >
-                    }
-                </StyledForm>
-                <CloseArrow 
-                    icon={this.props.sideBarOpen ? faArrowLeft : faArrowRight} 
-                    open={this.props.sideBarOpen} 
-                    onClick={this.handleSidebarClose}
+    return(
+        <StyledSidebar open={props.sideBarOpen}>
+            <StyledForm>
+                <Button 
+                    variant="contained" 
+                    color="primary" 
+                    onClick={handleGenerateColor}
+                >
+                        Random Color
+                </Button>
+                <StyledSketchPicker
+                    color={ props.color}
+                    onChangeComplete={ handleChangeColorPicker }
+                    name="colorPicker"
                 />
-            </StyledSidebar>
-        )
-    }
+                <StyledTextField
+                    error = {nameEmpty}
+                    helperText = {nameEmpty && 'The name field is required'}
+                    id="standard-error"
+                    name="colorName"
+                    label="Color name"
+                    onChange = {props.colorName}
+                    value={props.name}
+                />
+                {validateColor &&
+                    <AlertError>
+                        This name or color already exists!
+                    </AlertError    >
+                }
+                <Button 
+                    variant="contained" 
+                    color="primary" 
+                    onClick={props.submit}
+                    disabled = {nameEmpty || validateColor || limitQuantity}
+                >
+                        Add Color
+                </Button>
+                {limitQuantity &&
+                    <AlertError>
+                        You already have 20 colors!
+                    </AlertError    >
+                }
+            </StyledForm>
+            <CloseArrow 
+                icon={props.sideBarOpen ? faArrowLeft : faArrowRight} 
+                open={props.sideBarOpen} 
+                onClick={handleSidebarClose}
+            />
+        </StyledSidebar>
+    )
 }
 
 export default SideBar;

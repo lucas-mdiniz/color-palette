@@ -1,7 +1,8 @@
-import React, {Component} from 'react';
+import React, {useEffect, useState, useContext} from 'react';
 import styled from 'styled-components';
 import { Slider, MenuItem, Select, FormControl, InputLabel, withStyles, Typography, Button } from '@material-ui/core';
 import { withRouter } from "react-router";
+import {ColorFormatContext} from './context/ColorFormatContext';
 
 const StyledPaletteHeader = styled.div`
     background: #fff;
@@ -56,77 +57,63 @@ const StyledSlider = withStyles({
   })(Slider);
 
   
-class PaletteHeader extends Component{
-    constructor(){
-        super();
+function PaletteHeader({changeLuminanceSlider, ...props}){
 
-        this.state = {
-            colorFormat: '',
-            luminanceSlider: 400
-        }
+    const [colorFormat, handleColorFormat] = useContext(ColorFormatContext);
 
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSlider = this.handleSlider.bind(this);
-        this.handleBack = this.handleBack.bind(this);
-    }
+    const [luminanceSlider, setLuminance] = useState(400);
+
+    const handleSlider = (e, value) => {
+        setLuminance(value);
+    };
+
+    useEffect(() => {
+        if(changeLuminanceSlider)
+        changeLuminanceSlider(luminanceSlider);
+    }, [luminanceSlider, changeLuminanceSlider]);
     
-    handleChange(e, value){
-        this.setState({
-            [e.target.name]: e.target.value
-        }, () => this.props.colorFormat(this.state.colorFormat));
+    const handleBack = () =>{  
+        props.history.goBack();
     }
 
-    handleSlider(e, value){
-        this.setState({
-            luminanceSlider: value
-        }, () => this.props.luminanceSlider(this.state.luminanceSlider));
-    }
-    
-    handleBack(){
-        
-        this.props.history.goBack();
-
-    }
-
-    render(){
-        return(
-            <StyledPaletteHeader>
-                { this.props.luminanceOn &&
-                    <SliderWrapper>
-                        <StyledTypography gutterBottom>Level: [{this.state.luminanceSlider}]</StyledTypography>
-                        <StyledSlider
-                            aria-labelledby="discrete-slider"
-                            valueLabelDisplay="auto"
-                            step={100}
-                            min={50}
-                            max={900}
-                            value={this.state.luminanceSlider}
-                            onChange={this.handleSlider}
-                            name='luminanceSlider'
-                        />
-                    </SliderWrapper>
-                }
-                <FormControl>
-                    <InputLabel htmlFor="color-format">Copy Format: Hex</InputLabel>
-                    <StyledSelect
-                    value={this.state.colorFormat}
-                    onChange={this.handleChange}
-                    inputProps={{
-                        name: 'colorFormat',
-                        id: 'color-format',
-                    }}
-                    >
-                        <MenuItem value={'hex'}>Copy Format: HEX</MenuItem>
-                        <MenuItem value={'rgb'}>Copy Format: RGB</MenuItem>
-                        <MenuItem value={'rgba'}>Copy Format: RGBA</MenuItem>
-                    </StyledSelect>
-                </FormControl>
-                { this.props.backButton &&
-                    <Button variant="contained" onClick={this.handleBack}>Back</Button>
-                }
-            </StyledPaletteHeader>
-        );
-    }
+    return(
+        <StyledPaletteHeader>
+            { props.luminanceOn &&
+                <SliderWrapper>
+                    <StyledTypography gutterBottom>Level: [{luminanceSlider}]</StyledTypography>
+                    <StyledSlider
+                        aria-labelledby="discrete-slider"
+                        valueLabelDisplay="auto"
+                        step={100}
+                        min={50}
+                        max={900}
+                        value={luminanceSlider}
+                        onChange={handleSlider}
+                        name='luminanceSlider'
+                    />
+                </SliderWrapper>
+            }
+            <FormControl>
+                <InputLabel htmlFor="color-format">Copy Format: Hex</InputLabel>
+                <StyledSelect
+                value={colorFormat}
+                onChange={handleColorFormat}
+                inputProps={{
+                    name: 'colorFormat',
+                    id: 'color-format',
+                }}
+                >
+                    <MenuItem value={'hex'}>Copy Format: HEX</MenuItem>
+                    <MenuItem value={'rgb'}>Copy Format: RGB</MenuItem>
+                    <MenuItem value={'rgba'}>Copy Format: RGBA</MenuItem>
+                </StyledSelect>
+            </FormControl>
+            { props.backButton &&
+                <Button variant="contained" onClick={handleBack}>Back</Button>
+            }
+        </StyledPaletteHeader>
+    );
 }
+
 
 export default withRouter(PaletteHeader);

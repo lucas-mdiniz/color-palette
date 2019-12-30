@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {useState, useEffect} from 'react';
 import ColorBox from './ColorBox';
 import styled from 'styled-components';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
@@ -9,10 +9,10 @@ const BoxOverlay =
         style: {
             background: props.colorOverlay,
             opacity: (props.colorCopied ? '1' : '0'),
-            zIndex: props.colorCopied ? '10' : '-1'
+            zIndex: props.colorCopied ? '10' : '-1',
         },
     }))`
-    
+
     height: 100%;
     transition: all 300ms;
     position: fixed;
@@ -75,41 +75,44 @@ const StyledColorBox = styled(ColorBox)`
 `;
 
 
-class CopyColorBox extends Component{
-    constructor(){
-        super();
+function CopyColorBox (props){
 
-        this.state = {
-            copied: false
+    const [copied, setCopied] = useState(false);
+
+    const copyColor = () => {
+        setCopied(!copied);
+    };
+
+    useEffect(() => {
+        if (copied === true) {
+            const id = setTimeout(() =>{
+                setCopied(prev => !prev);
+            }, 1000);
+
+            return () => {
+                clearTimeout(id);
+            }
         }
-
-        this.copyColor = this.copyColor.bind(this);
-    }
-
-    copyColor(){
-        this.setState({copied: true}, () => {setTimeout(() =>{ this.setState({copied: false})}, 1000)});
-    }
-
-    render(){
-        return(
-            <CopyToClipboard text={this.props.color} onCopy={this.copyColor}>
-                <StyledColorBox
-                    color={this.props.color}
-                    name={this.props.name}
-                    className={this.props.className}
+    }, [copied]);
+    
+    return(
+        <CopyToClipboard text={props.color} onCopy={copyColor}>
+            <StyledColorBox
+                color={props.color}
+                name={props.name}
+                className={props.className}
+            >
+                <BoxOverlay
+                    colorOverlay={props.color}
+                    colorCopied={copied}
                 >
-                    <BoxOverlay
-                        colorOverlay={this.props.color}
-                        colorCopied={this.state.copied}
-                    >
-                        <CopiedSign>Copied!</CopiedSign>
-                    </BoxOverlay>
-                    <CopyButton color={this.props.color}>Copy</CopyButton>
-                    {this.props.children}
-                </StyledColorBox>
-            </CopyToClipboard>
-        )
-    }
+                    <CopiedSign>Copied!</CopiedSign>
+                </BoxOverlay>
+                <CopyButton color={props.color}>Copy</CopyButton>
+                {props.children}
+            </StyledColorBox>
+        </CopyToClipboard>
+    )
 }
 
 export default CopyColorBox;

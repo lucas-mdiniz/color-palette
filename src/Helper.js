@@ -24,7 +24,8 @@ function generateColorShades(color){
     return shades;
 }
 
-function colorFormat(oldColor, format){
+function changeColorFormat(oldColor, format){
+
     if(format === 'hex'){
         return(color(oldColor).hex());
     } else if(format === 'rgb'){
@@ -34,4 +35,4 @@ function colorFormat(oldColor, format){
     }
 }
 
-export {generateColorShades, colorFormat};
+export {generateColorShades, changeColorFormat};
