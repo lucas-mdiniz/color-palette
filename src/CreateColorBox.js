@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
@@ -25,29 +25,22 @@ const DeleteIcon = styled(FontAwesomeIcon)`
     color: ${props => chroma(props.color).luminance() > 0.4 ? '#000' : '#fff'};
 `;
 
-class CreateColorBox extends Component{
-    constructor(){
-        super();
-
-        this.handleClick = this.handleClick.bind(this);
-    }
-    
-    handleClick(){
-        this.props.delete(this.props.index);
+function CreateColorBox(props){
+    console.log('rerendered');
+    const handleClick = () => {
+        props.delete(props.index);
     }
 
-    render(){
-        return(
-            <StyledCreateColorBox color={this.props.color}>
-                <ColorName color={this.props.color}>{this.props.name}</ColorName>
-                <DeleteIcon 
-                    icon={faTrash} 
-                    onClick={this.handleClick}
-                    color={this.props.color}
-                />
-            </StyledCreateColorBox>
-        )
-    }
+    return(
+        <StyledCreateColorBox color={props.color}>
+            <ColorName color={props.color}>{props.name}</ColorName>
+            <DeleteIcon 
+                icon={faTrash} 
+                onClick={handleClick}
+                color={props.color}
+            />
+        </StyledCreateColorBox>
+    )
 }
 
 export default CreateColorBox;

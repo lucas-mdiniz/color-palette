@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {useState} from 'react';
 import SideBar from './SideBar';
 import {Button} from '@material-ui/core';
 import styled from 'styled-components';
@@ -11,6 +11,7 @@ import axios from 'axios';
 import {GridContainer} from './GridSystem';
 import chroma from 'chroma-js';
 import {generateColorShades} from './Helper';
+import useInputState from './hooks/useInputState';
 
 const CreatePaletteWrapper = styled.div`
     display: flex;
@@ -56,96 +57,74 @@ const SortableBox = SortableElement(({children}) =>
 );
 
 
-class CreatePalette extends Component{
-    constructor(props){ 
-        super(props);
+function CreatePalette(props){
 
-        this.state = {
-            colorPicker: '#000',
-            colorName: '',
-            colors: [],
-            paletteName: '',
-            setOpen: false,
-            icon: '',
-            sideBarOpen: true
-        }
+    const [colorPicker, setColorPicker] = useState('#000');
+    const [colorName, setColorName, resetColorName] = useInputState('');
+    const [colors, setColors] = useState([]);
+    const [paletteName, setPaletteName] = useInputState('');
+    const [open, setOpen] = useState(false);
+    const [icon, setIcon] = useState('');
+    const [sideBarOpen, setSideBarOpen] = useState(true);
 
-        this.handleChangeColorPicker = this.handleChangeColorPicker.bind(this);
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleDelete = this.handleDelete.bind(this);
-        this.onSortEnd = this.onSortEnd.bind(this);
-        this.handleClose = this.handleClose.bind(this);
-        this.handleOpen = this.handleOpen.bind(this);
-        this.addEmoji = this.addEmoji.bind(this);
-        this.handleCreatePalette = this.handleCreatePalette.bind(this);
-        this.handleSidebarClose = this.handleSidebarClose.bind(this);
-        this.generateColor = this.generateColor.bind(this);
-    }
-
-    handleChangeColorPicker(color) {
+    const handleChangeColorPicker = color => {
         const newColor = chroma(color.rgb).hex();
         console.log(chroma([126,60,60,0.64]).hex());
-        this.setState({ colorPicker: newColor })
+        setColorPicker(newColor);
     };
 
-    handleChange(e){
-        this.setState({
-            [e.target.name] : e.target.value
-        });
-    }
-
-    handleSubmit(e){
+    const handleSubmit = e =>{
         e.preventDefault();
         const color = {
-            colorName: this.state.colorName,
-            color: this.state.colorPicker
+            colorName: colorName,
+            color: colorPicker
         }
-        const colors = [...this.state.colors, color];
+        const newColors = [...colors, color];
         
-        this.setState({colors, colorName: '', colorPicker:'#000'});
+        setColors(newColors);
+        resetColorName();
+        setColorPicker('#000');
     }
 
-    handleDelete(index){
-        const colors = [...this.state.colors];
+    const handleDelete = index => {
+        const newColors = [...colors];
 
-        colors.splice(index,1);
+        newColors.splice(index,1);
 
-        this.setState({colors});
+        setColors(newColors);
     }
 
-    handleOpen(){
-        this.setState({setOpen: true});
+    const handleOpen = () => {
+        setOpen(true);
     };
 
-    handleClose(){
-        this.setState({setOpen: false});
+    const handleClose = () => {
+        setOpen(false);
     };
 
-    onSortEnd({oldIndex, newIndex}) { 
-        let colors = [...this.state.colors];
+    const onSortEnd = ({oldIndex, newIndex}) => { 
+        let newColors = [...colors];
 
-        colors = arrayMove(colors, oldIndex, newIndex);
+        newColors = arrayMove(newColors, oldIndex, newIndex);
 
-        this.setState({colors});
+        setColors(newColors);
     }
 
-    addEmoji(emoji){
-        this.setState({icon: emoji.colons});
+    const addEmoji = emoji => {
+        setIcon(emoji.colons);
     }
 
-    handleCreatePalette(){
-        const colors = [...this.state.colors];
+    const handleCreatePalette = () => {
 
         colors.map(color => color['shades'] = generateColorShades(color.color));
 
         axios.post('http://localhost:3000/palettes',{
             colors: colors,
-            name: this.state.paletteName,
-            icon: this.state.icon
+            name: paletteName,
+            icon: icon
         }).then((response) => {
-            this.props.urlParams.history.push('/');
-            this.props.palettesUpdate(response);
+            props.urlParams.history.push('/');
+            props.palettesUpdate(response);
         }).catch(error =>{
             if (error.response) {
                 /*
@@ -170,67 +149,64 @@ class CreatePalette extends Component{
         });
     }
 
-    handleSidebarClose(){
-        this.setState(previousState => ({sideBarOpen: !previousState.sideBarOpen}));
+    const handleSidebarClose = () => {
+        setSideBarOpen(prev => !prev);
     }
 
-    generateColor(){
+    const generateColor = () => {
         const color = chroma.random().hex();
 
-        this.setState({colorPicker: color});
+        setColorPicker(color);
 
     }
 
-
-    render(){
-        return(
-            <StylesProvider injectFirst>
-                <CreatePaletteWrapper>
-                    <SideBar 
-                        colorPicker = {this.handleChangeColorPicker}
-                        color={this.state.colorPicker}
-                        colorName = {this.handleChange}
-                        name={this.state.colorName}
-                        colors={this.state.colors}
-                        submit={this.handleSubmit}
-                        handleClose={this.handleSidebarClose}
-                        sideBarOpen={this.state.sideBarOpen}
-                        generateColor={this.generateColor}
-                    />
-                    <PalleteWrapper>
-                        <PaletteHeader>
-                            {this.state.colors.length < 20 &&
-                            <ColorLimitAlert>Please insert 20 colors!</ColorLimitAlert>
-                            }
-                            <Button 
-                                variant="contained" 
-                                color="primary" 
-                                onClick={this.handleOpen}
-                                disabled={this.state.colors.length !== 20}
-                            >
-                                Save Palette
-                            </Button> 
-                            <SavePalette
-                                open={this.state.setOpen}
-                                onClose={this.handleClose}
-                                paletteName={this.state.paletteName}
-                                changeField={this.handleChange}
-                                createPalette={this.handleCreatePalette}
-                                addEmoji = {this.addEmoji}
-                             />  
-                        </PaletteHeader>
-                        <SortableGrid distance={1} axis="xy" onSortEnd ={this.onSortEnd}>
-                            {this.state.colors.map((color, index) =>
-                                        <SortableBox index={index} key={color.color}>
-                                            <CreateColorBox color={color.color} name={color.colorName} index={index} delete={this.handleDelete}/>
-                                        </SortableBox> 
-                            )}
-                        </SortableGrid>
-                    </PalleteWrapper>
-                </CreatePaletteWrapper>
-            </StylesProvider>
-        )
-    }
+    return(
+        <StylesProvider injectFirst>
+            <CreatePaletteWrapper>
+                <SideBar 
+                    colorPicker = {handleChangeColorPicker}
+                    color={colorPicker}
+                    colorName = {setColorName}
+                    name={colorName}
+                    colors={colors}
+                    submit={handleSubmit}
+                    handleClose={handleSidebarClose}
+                    sideBarOpen={sideBarOpen}
+                    generateColor={generateColor}
+                />
+                <PalleteWrapper>
+                    <PaletteHeader>
+                        {colors.length < 20 &&
+                        <ColorLimitAlert>Please insert 20 colors!</ColorLimitAlert>
+                        }
+                        <Button 
+                            variant="contained" 
+                            color="primary" 
+                            onClick={handleOpen}
+                            disabled={colors.length !== 20}
+                        >
+                            Save Palette
+                        </Button> 
+                        <SavePalette
+                            open={open}
+                            onClose={handleClose}
+                            paletteName={paletteName}
+                            changeField={setPaletteName}
+                            createPalette={handleCreatePalette}
+                            addEmoji = {addEmoji}
+                            />  
+                    </PaletteHeader>
+                    <SortableGrid distance={1} axis="xy" onSortEnd ={onSortEnd}>
+                        {colors.map((color, index) =>
+                                    <SortableBox index={index} key={color.color}>
+                                        <CreateColorBox color={color.color} name={color.colorName} index={index} delete={handleDelete}/>
+                                    </SortableBox> 
+                        )}
+                    </SortableGrid>
+                </PalleteWrapper>
+            </CreatePaletteWrapper>
+        </StylesProvider>
+    )
 }
 
 export default CreatePalette;
