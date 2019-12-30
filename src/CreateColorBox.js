@@ -26,8 +26,7 @@ const DeleteIcon = styled(FontAwesomeIcon)`
 `;
 
 function CreateColorBox(props){
-
-    
+    console.log('rerendered');
     const handleClick = () => {
         props.delete(props.index);
     }

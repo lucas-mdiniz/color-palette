@@ -89,14 +89,24 @@ class App extends Component {
   render(){
 
     return (
-      <ColorFormatProvider>
-        <Switch>
-          <Route exact path='/' render={() => <Home palettes={this.state.palettes} deletePalette={this.deletePalette}/>}/>
-          <Route exact path='/palette/:id' render={(urlParams) => <Palette numberOfShades={this.props.numberOfShades} palettes={this.state.palettes} loading={this.state.isLoading} urlParams={urlParams}/>}/>
-          <Route exact path='/shades/:color' render={(urlParams) => <ColorShades numberOfShades={this.props.numberOfShades} urlParams={urlParams}/>}/>
-          <Route exact path='/create' render={(urlParams) => <CreatePalette urlParams={urlParams} palettesUpdate={this.handleUpdate}/>}/>
-        </Switch>
-      </ColorFormatProvider>
+      <Switch>
+        <Route exact path='/' render={() => <Home palettes={this.state.palettes} deletePalette={this.deletePalette}/>}/>
+        <Route exact path='/create' render={(urlParams) => <CreatePalette urlParams={urlParams} palettesUpdate={this.handleUpdate}/>}/>
+        <Route exact path='/palette/:id' 
+          render={(urlParams) => 
+            <ColorFormatProvider>
+              <Palette numberOfShades={this.props.numberOfShades} palettes={this.state.palettes} loading={this.state.isLoading} urlParams={urlParams}/>
+            </ColorFormatProvider>
+          }
+        />
+        <Route exact path='/shades/:color' 
+          render={(urlParams) => 
+            <ColorFormatProvider>
+              <ColorShades numberOfShades={this.props.numberOfShades} urlParams={urlParams}/>
+            </ColorFormatProvider>
+          }
+        />
+      </Switch>
     );
   }
 }
