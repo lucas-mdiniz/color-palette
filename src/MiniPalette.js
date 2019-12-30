@@ -76,7 +76,6 @@ const CancelButton = styled(Button)`
 `;
 
 function MiniPalette(props){
-
     const [modalOpen, setModalOpen] = useState(false);
 
     const confirmDelete = e => {
