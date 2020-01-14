@@ -37,7 +37,7 @@ npm start
 
 * [React.js](https://reactjs.org/)
 * [react-router](https://reacttraining.com/react-router/web/guides/quick-start)
-* [styled-components](https://rometools.github.io/rome/)
+* [styled-components](https://github.com/styled-components/styled-components)
 * [axios](https://github.com/axios/axios)
 * [react-sortable-hoc](https://github.com/clauderic/react-sortable-hoc)
 * [chroma.js](https://github.com/gka/chroma.js/)
