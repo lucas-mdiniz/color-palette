@@ -14,7 +14,7 @@ Creating a new palette:
 
 ## Running the app
 
-First of all make sure you install npm:
+First of all make sure to run:
 
 ```
 npm install
